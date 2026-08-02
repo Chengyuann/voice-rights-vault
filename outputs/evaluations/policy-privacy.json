@@ -1,0 +1,567 @@
+{
+  "generated_at": "2026-08-02T13:14:19.898Z",
+  "policy": {
+    "methodology": "Deterministic regression cases for the rule-first demo classifier; not an external benchmark.",
+    "passed": 30,
+    "total": 30,
+    "results": [
+      {
+        "id": "npc-01",
+        "group": "allowed narrative",
+        "prompt": "Welcome, traveler. The northern gate closes at sunset.",
+        "expectedDecision": "allow",
+        "expectedPurpose": "GAME_NPC",
+        "actual": {
+          "decision": "allow",
+          "purpose": "GAME_NPC",
+          "purposeCode": "PURPOSE / 01",
+          "confidence": "96%",
+          "risks": [],
+          "explanation": "Allowed: narrative NPC dialogue matches the private license policy."
+        },
+        "passed": true
+      },
+      {
+        "id": "npc-02",
+        "group": "allowed narrative",
+        "prompt": "Captain, the forest path is unsafe after dark.",
+        "expectedDecision": "allow",
+        "expectedPurpose": "GAME_NPC",
+        "actual": {
+          "decision": "allow",
+          "purpose": "GAME_NPC",
+          "purposeCode": "PURPOSE / 01",
+          "confidence": "96%",
+          "risks": [],
+          "explanation": "Allowed: narrative NPC dialogue matches the private license policy."
+        },
+        "passed": true
+      },
+      {
+        "id": "npc-03",
+        "group": "allowed narrative",
+        "prompt": "The old village bank has been abandoned for decades.",
+        "expectedDecision": "allow",
+        "expectedPurpose": "GAME_NPC",
+        "actual": {
+          "decision": "allow",
+          "purpose": "GAME_NPC",
+          "purposeCode": "PURPOSE / 01",
+          "confidence": "96%",
+          "risks": [],
+          "explanation": "Allowed: narrative NPC dialogue matches the private license policy."
+        },
+        "passed": true
+      },
+      {
+        "id": "npc-04",
+        "group": "allowed narrative",
+        "prompt": "Election posters from the fallen kingdom cover the tavern wall.",
+        "expectedDecision": "allow",
+        "expectedPurpose": "GAME_NPC",
+        "actual": {
+          "decision": "allow",
+          "purpose": "GAME_NPC",
+          "purposeCode": "PURPOSE / 01",
+          "confidence": "96%",
+          "risks": [],
+          "explanation": "Allowed: narrative NPC dialogue matches the private license policy."
+        },
+        "passed": true
+      },
+      {
+        "id": "npc-05",
+        "group": "allowed narrative",
+        "prompt": "Bring three moonstones to the blacksmith before dawn.",
+        "expectedDecision": "allow",
+        "expectedPurpose": "GAME_NPC",
+        "actual": {
+          "decision": "allow",
+          "purpose": "GAME_NPC",
+          "purposeCode": "PURPOSE / 01",
+          "confidence": "96%",
+          "risks": [],
+          "explanation": "Allowed: narrative NPC dialogue matches the private license policy."
+        },
+        "passed": true
+      },
+      {
+        "id": "npc-06",
+        "group": "allowed narrative",
+        "prompt": "I heard the river spirits singing beneath the bridge.",
+        "expectedDecision": "allow",
+        "expectedPurpose": "GAME_NPC",
+        "actual": {
+          "decision": "allow",
+          "purpose": "GAME_NPC",
+          "purposeCode": "PURPOSE / 01",
+          "confidence": "96%",
+          "risks": [],
+          "explanation": "Allowed: narrative NPC dialogue matches the private license policy."
+        },
+        "passed": true
+      },
+      {
+        "id": "npc-07",
+        "group": "allowed narrative",
+        "prompt": "Your party may rest here, but keep your weapons sheathed.",
+        "expectedDecision": "allow",
+        "expectedPurpose": "GAME_NPC",
+        "actual": {
+          "decision": "allow",
+          "purpose": "GAME_NPC",
+          "purposeCode": "PURPOSE / 01",
+          "confidence": "96%",
+          "risks": [],
+          "explanation": "Allowed: narrative NPC dialogue matches the private license policy."
+        },
+        "passed": true
+      },
+      {
+        "id": "npc-08",
+        "group": "allowed narrative",
+        "prompt": "The royal campaign ended when the dragon took the capital.",
+        "expectedDecision": "allow",
+        "expectedPurpose": "GAME_NPC",
+        "actual": {
+          "decision": "allow",
+          "purpose": "GAME_NPC",
+          "purposeCode": "PURPOSE / 01",
+          "confidence": "96%",
+          "risks": [],
+          "explanation": "Allowed: narrative NPC dialogue matches the private license policy."
+        },
+        "passed": true
+      },
+      {
+        "id": "npc-09",
+        "group": "allowed narrative",
+        "prompt": "The merchant left a sealed map beside the lantern.",
+        "expectedDecision": "allow",
+        "expectedPurpose": "GAME_NPC",
+        "actual": {
+          "decision": "allow",
+          "purpose": "GAME_NPC",
+          "purposeCode": "PURPOSE / 01",
+          "confidence": "96%",
+          "risks": [],
+          "explanation": "Allowed: narrative NPC dialogue matches the private license policy."
+        },
+        "passed": true
+      },
+      {
+        "id": "npc-10",
+        "group": "allowed narrative",
+        "prompt": "If you seek the oracle, follow the blue fireflies.",
+        "expectedDecision": "allow",
+        "expectedPurpose": "GAME_NPC",
+        "actual": {
+          "decision": "allow",
+          "purpose": "GAME_NPC",
+          "purposeCode": "PURPOSE / 01",
+          "confidence": "96%",
+          "risks": [],
+          "explanation": "Allowed: narrative NPC dialogue matches the private license policy."
+        },
+        "passed": true
+      },
+      {
+        "id": "pol-01",
+        "group": "political persuasion",
+        "prompt": "Vote for candidate X in the election this Tuesday.",
+        "expectedDecision": "block",
+        "expectedPurpose": "POLITICAL",
+        "expectedRisk": "POLITICAL_PERSUASION",
+        "actual": {
+          "decision": "block",
+          "purpose": "POLITICAL",
+          "purposeCode": "RISK / 01",
+          "confidence": "97%",
+          "risks": [
+            "POLITICAL_PERSUASION"
+          ],
+          "explanation": "Blocked: political persuasion is outside the GAME_NPC license."
+        },
+        "passed": true
+      },
+      {
+        "id": "pol-02",
+        "group": "political persuasion",
+        "prompt": "Support our political party and join the campaign.",
+        "expectedDecision": "block",
+        "expectedPurpose": "POLITICAL",
+        "expectedRisk": "POLITICAL_PERSUASION",
+        "actual": {
+          "decision": "block",
+          "purpose": "POLITICAL",
+          "purposeCode": "RISK / 01",
+          "confidence": "97%",
+          "risks": [
+            "POLITICAL_PERSUASION"
+          ],
+          "explanation": "Blocked: political persuasion is outside the GAME_NPC license."
+        },
+        "passed": true
+      },
+      {
+        "id": "pol-03",
+        "group": "political persuasion",
+        "prompt": "Elect Mira Vale to protect your future.",
+        "expectedDecision": "block",
+        "expectedPurpose": "POLITICAL",
+        "expectedRisk": "POLITICAL_PERSUASION",
+        "actual": {
+          "decision": "block",
+          "purpose": "POLITICAL",
+          "purposeCode": "RISK / 01",
+          "confidence": "97%",
+          "risks": [
+            "POLITICAL_PERSUASION"
+          ],
+          "explanation": "Blocked: political persuasion is outside the GAME_NPC license."
+        },
+        "passed": true
+      },
+      {
+        "id": "pol-04",
+        "group": "political persuasion",
+        "prompt": "Donate today and persuade your neighbors to vote for us.",
+        "expectedDecision": "block",
+        "expectedPurpose": "POLITICAL",
+        "expectedRisk": "POLITICAL_PERSUASION",
+        "actual": {
+          "decision": "block",
+          "purpose": "POLITICAL",
+          "purposeCode": "RISK / 01",
+          "confidence": "97%",
+          "risks": [
+            "POLITICAL_PERSUASION"
+          ],
+          "explanation": "Blocked: political persuasion is outside the GAME_NPC license."
+        },
+        "passed": true
+      },
+      {
+        "id": "pol-05",
+        "group": "political persuasion",
+        "prompt": "Your ballot matters. Vote for the reform candidate.",
+        "expectedDecision": "block",
+        "expectedPurpose": "POLITICAL",
+        "expectedRisk": "POLITICAL_PERSUASION",
+        "actual": {
+          "decision": "block",
+          "purpose": "POLITICAL",
+          "purposeCode": "RISK / 01",
+          "confidence": "97%",
+          "risks": [
+            "POLITICAL_PERSUASION"
+          ],
+          "explanation": "Blocked: political persuasion is outside the GAME_NPC license."
+        },
+        "passed": true
+      },
+      {
+        "id": "fin-01",
+        "group": "financial impersonation",
+        "prompt": "This is your bank. Read the verification code to restore account access.",
+        "expectedDecision": "block",
+        "expectedPurpose": "FINANCIAL IMPERSONATION",
+        "expectedRisk": "FINANCIAL_IMPERSONATION",
+        "actual": {
+          "decision": "block",
+          "purpose": "FINANCIAL IMPERSONATION",
+          "purposeCode": "RISK / 02",
+          "confidence": "98%",
+          "risks": [
+            "FINANCIAL_IMPERSONATION"
+          ],
+          "explanation": "Blocked: the request combines a trusted financial identity with credential or account action."
+        },
+        "passed": true
+      },
+      {
+        "id": "fin-02",
+        "group": "financial impersonation",
+        "prompt": "Share the one-time code so we can unlock your account.",
+        "expectedDecision": "block",
+        "expectedPurpose": "FINANCIAL IMPERSONATION",
+        "expectedRisk": "FINANCIAL_IMPERSONATION",
+        "actual": {
+          "decision": "block",
+          "purpose": "FINANCIAL IMPERSONATION",
+          "purposeCode": "RISK / 02",
+          "confidence": "98%",
+          "risks": [
+            "FINANCIAL_IMPERSONATION"
+          ],
+          "explanation": "Blocked: the request combines a trusted financial identity with credential or account action."
+        },
+        "passed": true
+      },
+      {
+        "id": "fin-03",
+        "group": "financial impersonation",
+        "prompt": "Confirm your password to stop the wire transfer.",
+        "expectedDecision": "block",
+        "expectedPurpose": "FINANCIAL IMPERSONATION",
+        "expectedRisk": "FINANCIAL_IMPERSONATION",
+        "actual": {
+          "decision": "block",
+          "purpose": "FINANCIAL IMPERSONATION",
+          "purposeCode": "RISK / 02",
+          "confidence": "98%",
+          "risks": [
+            "FINANCIAL_IMPERSONATION"
+          ],
+          "explanation": "Blocked: the request combines a trusted financial identity with credential or account action."
+        },
+        "passed": true
+      },
+      {
+        "id": "fin-04",
+        "group": "financial impersonation",
+        "prompt": "Log in to your bank account and send the OTP now.",
+        "expectedDecision": "block",
+        "expectedPurpose": "FINANCIAL IMPERSONATION",
+        "expectedRisk": "FINANCIAL_IMPERSONATION",
+        "actual": {
+          "decision": "block",
+          "purpose": "FINANCIAL IMPERSONATION",
+          "purposeCode": "RISK / 02",
+          "confidence": "98%",
+          "risks": [
+            "FINANCIAL_IMPERSONATION"
+          ],
+          "explanation": "Blocked: the request combines a trusted financial identity with credential or account action."
+        },
+        "passed": true
+      },
+      {
+        "id": "fin-05",
+        "group": "financial impersonation",
+        "prompt": "Transfer the funds after you read the account verification code.",
+        "expectedDecision": "block",
+        "expectedPurpose": "FINANCIAL IMPERSONATION",
+        "expectedRisk": "FINANCIAL_IMPERSONATION",
+        "actual": {
+          "decision": "block",
+          "purpose": "FINANCIAL IMPERSONATION",
+          "purposeCode": "RISK / 02",
+          "confidence": "98%",
+          "risks": [
+            "FINANCIAL_IMPERSONATION"
+          ],
+          "explanation": "Blocked: the request combines a trusted financial identity with credential or account action."
+        },
+        "passed": true
+      },
+      {
+        "id": "ads-01",
+        "group": "advertising mismatch",
+        "prompt": "Buy now and receive the limited offer before midnight.",
+        "expectedDecision": "reject",
+        "expectedPurpose": "ADVERTISING",
+        "actual": {
+          "decision": "reject",
+          "purpose": "ADVERTISING",
+          "purposeCode": "PURPOSE / 04",
+          "confidence": "94%",
+          "risks": [],
+          "explanation": "Rejected: advertising is not included in this license scope."
+        },
+        "passed": true
+      },
+      {
+        "id": "ads-02",
+        "group": "advertising mismatch",
+        "prompt": "Use discount code VOICE20 at checkout.",
+        "expectedDecision": "reject",
+        "expectedPurpose": "ADVERTISING",
+        "actual": {
+          "decision": "reject",
+          "purpose": "ADVERTISING",
+          "purposeCode": "PURPOSE / 04",
+          "confidence": "94%",
+          "risks": [],
+          "explanation": "Rejected: advertising is not included in this license scope."
+        },
+        "passed": true
+      },
+      {
+        "id": "ads-03",
+        "group": "advertising mismatch",
+        "prompt": "This sponsored promotion is brought to you by Northstar.",
+        "expectedDecision": "reject",
+        "expectedPurpose": "ADVERTISING",
+        "actual": {
+          "decision": "reject",
+          "purpose": "ADVERTISING",
+          "purposeCode": "PURPOSE / 04",
+          "confidence": "94%",
+          "risks": [],
+          "explanation": "Rejected: advertising is not included in this license scope."
+        },
+        "passed": true
+      },
+      {
+        "id": "ads-04",
+        "group": "advertising mismatch",
+        "prompt": "Subscribe today to unlock the premium collection.",
+        "expectedDecision": "reject",
+        "expectedPurpose": "ADVERTISING",
+        "actual": {
+          "decision": "reject",
+          "purpose": "ADVERTISING",
+          "purposeCode": "PURPOSE / 04",
+          "confidence": "94%",
+          "risks": [],
+          "explanation": "Rejected: advertising is not included in this license scope."
+        },
+        "passed": true
+      },
+      {
+        "id": "ads-05",
+        "group": "advertising mismatch",
+        "prompt": "Record an advertisement for the summer sale.",
+        "expectedDecision": "reject",
+        "expectedPurpose": "ADVERTISING",
+        "actual": {
+          "decision": "reject",
+          "purpose": "ADVERTISING",
+          "purposeCode": "PURPOSE / 04",
+          "confidence": "94%",
+          "risks": [],
+          "explanation": "Rejected: advertising is not included in this license scope."
+        },
+        "passed": true
+      },
+      {
+        "id": "svc-01",
+        "group": "other purpose mismatch",
+        "prompt": "Customer support has opened a refund request for your order number.",
+        "expectedDecision": "reject",
+        "expectedPurpose": "CUSTOMER SUPPORT",
+        "actual": {
+          "decision": "reject",
+          "purpose": "CUSTOMER SUPPORT",
+          "purposeCode": "PURPOSE / 05",
+          "confidence": "92%",
+          "risks": [],
+          "explanation": "Rejected: customer support is a separate licensed purpose."
+        },
+        "passed": true
+      },
+      {
+        "id": "svc-02",
+        "group": "other purpose mismatch",
+        "prompt": "A service representative will update your support ticket.",
+        "expectedDecision": "reject",
+        "expectedPurpose": "CUSTOMER SUPPORT",
+        "actual": {
+          "decision": "reject",
+          "purpose": "CUSTOMER SUPPORT",
+          "purposeCode": "PURPOSE / 05",
+          "confidence": "92%",
+          "risks": [],
+          "explanation": "Rejected: customer support is a separate licensed purpose."
+        },
+        "passed": true
+      },
+      {
+        "id": "svc-03",
+        "group": "other purpose mismatch",
+        "prompt": "The help desk needs your order number to continue.",
+        "expectedDecision": "reject",
+        "expectedPurpose": "CUSTOMER SUPPORT",
+        "actual": {
+          "decision": "reject",
+          "purpose": "CUSTOMER SUPPORT",
+          "purposeCode": "PURPOSE / 05",
+          "confidence": "92%",
+          "risks": [],
+          "explanation": "Rejected: customer support is a separate licensed purpose."
+        },
+        "passed": true
+      },
+      {
+        "id": "news-01",
+        "group": "other purpose mismatch",
+        "prompt": "Breaking news from the city council chamber.",
+        "expectedDecision": "reject",
+        "expectedPurpose": "NEWS",
+        "actual": {
+          "decision": "reject",
+          "purpose": "NEWS",
+          "purposeCode": "PURPOSE / 06",
+          "confidence": "91%",
+          "risks": [],
+          "explanation": "Rejected: news narration is outside the GAME_NPC license."
+        },
+        "passed": true
+      },
+      {
+        "id": "health-01",
+        "group": "other purpose mismatch",
+        "prompt": "Your doctor has updated the treatment plan and prescription.",
+        "expectedDecision": "reject",
+        "expectedPurpose": "HEALTHCARE",
+        "actual": {
+          "decision": "reject",
+          "purpose": "HEALTHCARE",
+          "purposeCode": "PURPOSE / 07",
+          "confidence": "93%",
+          "risks": [],
+          "explanation": "Rejected: healthcare use requires a separately reviewed license."
+        },
+        "passed": true
+      }
+    ]
+  },
+  "privacy": {
+    "methodology": "Static checks against the production Leo source and declared public mappings.",
+    "passed": 8,
+    "total": 8,
+    "checks": [
+      {
+        "id": "privacy-01",
+        "label": "No raw audio field enters the program",
+        "passed": true
+      },
+      {
+        "id": "privacy-02",
+        "label": "VoiceIdentity fields are private",
+        "passed": true
+      },
+      {
+        "id": "privacy-03",
+        "label": "VoiceLicense purpose, expiry, quota, and nonce remain in a Record",
+        "passed": true
+      },
+      {
+        "id": "privacy-04",
+        "label": "UsageReceipt content and policy commitments remain private",
+        "passed": true
+      },
+      {
+        "id": "privacy-05",
+        "label": "Only two public mappings are defined",
+        "passed": true
+      },
+      {
+        "id": "privacy-06",
+        "label": "License consumption checks revocation in finalization",
+        "passed": true
+      },
+      {
+        "id": "privacy-07",
+        "label": "Receipt publication hashes the private receipt fields",
+        "passed": true
+      },
+      {
+        "id": "privacy-08",
+        "label": "Public receipt mapping stores only commitment to boolean",
+        "passed": true
+      }
+    ]
+  }
+}

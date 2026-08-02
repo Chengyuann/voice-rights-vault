@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: voice-rights-vault
+    runtime: docker
+    rootDir: apps/web
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /readyz
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: "10000"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: PREVIEW_SAMPLE_REQUIRED
+        value: "0"
+      - key: BAILIAN_API_KEY
+        sync: false
+      - key: BAILIAN_WORKSPACE_ID
+        sync: false
+      - key: COSYVOICE_VOICE_ID
+        sync: false
+      - key: COSYVOICE_TARGET_MODEL
+        value: cosyvoice-v3.5-flash
+      - key: RATE_LIMIT_SALT
+        generateValue: true
+      - key: METRICS_TOKEN
+        generateValue: true

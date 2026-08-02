@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:3030",
+    "consensus_version": 17
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "revoke_license",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 101field.private,\n  issuer_commitment: 202field.private,\n  policy_root: 303field.private,\n  identity_version: 3u32.private,\n  issued_licenses: 2u32.private,\n  _nonce: 4764706020420227371891404163916579658991912016204297474468117555536534183672group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: voice_rights_v1.aleo,\n  function_name: revoke_license,\n  arguments: [\n    1807489127622554304012405842476172143846976033608003562723189344149083871103field\n  ]\n}"
+  ],
+  "transaction_id": "at1s7ss9a0n7w7mcww7m02u4gn7dzlhs4tl4u7zdg9l350drqvgegzq22ptp7",
+  "stats": {
+    "storage_cost": 2449,
+    "execution_cost": 532,
+    "priority_fee": 0,
+    "total_cost": 2981
+  },
+  "broadcast": {
+    "fee_id": "au1sufywhhf8gjxykgzun0403gmgfarhpsqrg8e4ugfydhv8qnnvqzq2m9akd",
+    "fee_transaction_id": "at1cgcrpfm8wzzsuyrmkuwtngldsemtpsx84h3qhqjqsnqy5y3zc5qqhy4wnj",
+    "confirmed": true
+  }
+}

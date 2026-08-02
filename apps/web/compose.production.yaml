@@ -1,0 +1,27 @@
+services:
+  voice-rights:
+    build:
+      context: .
+    ports:
+      - "4174:4174"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 4174
+      TRUST_PROXY: "1"
+      RATE_LIMIT_SALT: ${RATE_LIMIT_SALT}
+      METRICS_TOKEN: ${METRICS_TOKEN}
+      BAILIAN_CREDENTIALS_FILE: /run/secrets/bailian.csv
+      COSYVOICE_PROFILE_FILE: /run/secrets/cosyvoice-profile.json
+      VOICE_SAMPLE_FILE: /run/secrets/creator-voice-identity.mp3
+    volumes:
+      - ../../.secrets/bailian.csv:/run/secrets/bailian.csv:ro
+      - ../../.secrets/cosyvoice-profile.json:/run/secrets/cosyvoice-profile.json:ro
+      - ../../.secrets/voice/creator-voice-identity.mp3:/run/secrets/creator-voice-identity.mp3:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=256m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped

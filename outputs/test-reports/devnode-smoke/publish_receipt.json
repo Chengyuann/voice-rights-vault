@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:3030",
+    "consensus_version": 17
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "publish_receipt",
+  "outputs": [
+    "5995717436235304422299799340888026181168199597914901529216463999649839251551field",
+    "{\n  program_id: voice_rights_v1.aleo,\n  function_name: publish_receipt,\n  arguments: [\n    5995717436235304422299799340888026181168199597914901529216463999649839251551field\n  ]\n}"
+  ],
+  "transaction_id": "at1l6any7s94zdsyahy5zn4gsskza5hu3vrcsswm4xg2n9vw35ekvqs6cde2v",
+  "stats": {
+    "storage_cost": 1923,
+    "execution_cost": 532,
+    "priority_fee": 0,
+    "total_cost": 2455
+  },
+  "broadcast": {
+    "fee_id": "au1a96zq29gnmky86fm2gfeq0ue9ddlr3gqmskq2p53st3jfza5kvqsf74hrn",
+    "fee_transaction_id": "at1jrmz0zuncrvl4jplwwu0q8gf9klrjjzltevrrc7xky03tefwkyxspcjew6",
+    "confirmed": true
+  }
+}

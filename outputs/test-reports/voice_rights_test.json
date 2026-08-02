@@ -1,0 +1,50 @@
+{
+  "passed": 11,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "test_voice_rights_v1.aleo/register_voice_ok",
+      "passed": true
+    },
+    {
+      "name": "test_voice_rights_v1.aleo/register_empty_voice",
+      "passed": true
+    },
+    {
+      "name": "test_voice_rights_v1.aleo/register_empty_issuer",
+      "passed": true
+    },
+    {
+      "name": "test_voice_rights_v1.aleo/register_empty_policy",
+      "passed": true
+    },
+    {
+      "name": "test_voice_rights_v1.aleo/issue_license_ok",
+      "passed": true
+    },
+    {
+      "name": "test_voice_rights_v1.aleo/issue_zero_purpose",
+      "passed": true
+    },
+    {
+      "name": "test_voice_rights_v1.aleo/issue_empty_policy",
+      "passed": true
+    },
+    {
+      "name": "test_voice_rights_v1.aleo/issue_zero_expiry",
+      "passed": true
+    },
+    {
+      "name": "test_voice_rights_v1.aleo/issue_zero_uses",
+      "passed": true
+    },
+    {
+      "name": "test_voice_rights_v1.aleo/issue_empty_nonce",
+      "passed": true
+    },
+    {
+      "name": "test_voice_rights_v1.aleo/revoke_executes",
+      "passed": true
+    }
+  ]
+}

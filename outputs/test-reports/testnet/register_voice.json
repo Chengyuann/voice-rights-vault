@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy",
+    "network": "testnet",
+    "endpoint": "https://api.explorer.provable.com/v1",
+    "consensus_version": 18
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "register_voice",
+  "outputs": [
+    "{\n  owner: aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy.private,\n  voice_commitment: 111field.private,\n  issuer_commitment: 222field.private,\n  policy_root: 333field.private,\n  identity_version: 1u32.private,\n  issued_licenses: 0u32.private,\n  _nonce: 5274469336182994718178992159549416781141978019730082272254431700577340042154group.public,\n  _version: 1u8.public\n}"
+  ],
+  "transaction_id": "at1gctpxe4xqr0vcmxpt54xhs7edk7wem0fp0pdu7jyewrla54pjgpsd8q364",
+  "stats": {
+    "storage_cost": 1987,
+    "execution_cost": 0,
+    "priority_fee": 0,
+    "total_cost": 1987
+  },
+  "broadcast": {
+    "fee_id": "au1mwucwrtfwyml9l826sgxrt4fzpu0g4smhwhwlt9vyq9wsjwe75xsdylaar",
+    "fee_transaction_id": "at1d86tcw8faj86yt53n6g0xn6w08snwd09kuxj628cp709uwdfayrqwp5yne",
+    "confirmed": true
+  }
+}

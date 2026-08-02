@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy",
+    "network": "testnet",
+    "endpoint": "https://api.explorer.provable.com/v1",
+    "consensus_version": 18
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "publish_receipt",
+  "outputs": [
+    "6610397435077743748010476664191631872108731393908470993207354402980420406990field",
+    "{\n  program_id: voice_rights_v1.aleo,\n  function_name: publish_receipt,\n  arguments: [\n    6610397435077743748010476664191631872108731393908470993207354402980420406990field\n  ]\n}"
+  ],
+  "transaction_id": "at1nuze2r4eu8njc0mcexe42rtt7jael58ye4r2pucm9xlclr4efufqpfsd6h",
+  "stats": {
+    "storage_cost": 1923,
+    "execution_cost": 532,
+    "priority_fee": 0,
+    "total_cost": 2455
+  },
+  "broadcast": {
+    "fee_id": "au1zx07fhhfvlelv2hllx78kvmx35jfdmgamtupw58hgsu5m0u0lyrqhe2dpm",
+    "fee_transaction_id": "at1jh9txtv6uew233v869nxkv0x2yxxy8r7zlurppcgm6pwn3720uqsuwpm5r",
+    "confirmed": true
+  }
+}

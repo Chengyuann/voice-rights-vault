@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy",
+    "network": "testnet",
+    "endpoint": "https://api.explorer.provable.com/v1",
+    "consensus_version": 18
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "issue_license",
+  "outputs": [
+    "{\n  owner: aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy.private,\n  voice_commitment: 111field.private,\n  issuer_commitment: 222field.private,\n  policy_root: 333field.private,\n  identity_version: 2u32.private,\n  issued_licenses: 1u32.private,\n  _nonce: 4671273239016334900901459174874724563021765515690075827854810540723553515683group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy.private,\n  creator: aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy.private,\n  voice_commitment: 111field.private,\n  purpose: 1u8.private,\n  policy_commitment: 333field.private,\n  expiry_height: 18409753u32.private,\n  remaining_uses: 2u32.private,\n  revocation_id: 218947262885719160539577035146185427522903088082038125034735911699137704515field.private,\n  license_nonce: 777field.private,\n  _nonce: 1275393329063214306225713343577255126872006142620640031138987416116971506847group.public,\n  _version: 1u8.public\n}"
+  ],
+  "transaction_id": "at188jn3mcpa8pzz26djds2vaxr9f3rqrqgqkftfrf2ml6wrdlql5qqxgy0ff",
+  "stats": {
+    "storage_cost": 3474,
+    "execution_cost": 0,
+    "priority_fee": 0,
+    "total_cost": 3474
+  },
+  "broadcast": {
+    "fee_id": "au1z08w3w2rmn8plsre4h5h7y7v5lt2geyn2wk4a0kdp0jjqlc6jqfqe06p98",
+    "fee_transaction_id": "at1r2te8rtnpl7t877krrxnu48m2z3djmduh0k3d66pcdultz83scys5qauqp",
+    "confirmed": true
+  }
+}

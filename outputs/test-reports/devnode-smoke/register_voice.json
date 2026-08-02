@@ -1,0 +1,25 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:3030",
+    "consensus_version": 17
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "register_voice",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 101field.private,\n  issuer_commitment: 202field.private,\n  policy_root: 303field.private,\n  identity_version: 1u32.private,\n  issued_licenses: 0u32.private,\n  _nonce: 6254567026992423755188031321649972833396939536060815482462281684207346866679group.public,\n  _version: 1u8.public\n}"
+  ],
+  "transaction_id": "at1m4e86ta3sehueqrstzmck0ekk67zen059wzr3tku8mqgpl9x9g9s2p7kee",
+  "stats": {
+    "storage_cost": 1987,
+    "execution_cost": 0,
+    "priority_fee": 0,
+    "total_cost": 1987
+  },
+  "broadcast": {
+    "fee_id": "au1q97ptpf4wrnplltt5taanacen4hr3g2280sexd9l5xjzdf40a5ysl2z2j2",
+    "fee_transaction_id": "at14j3xxljuyqny4gnuphpr3pj8x3z8f95a5uuj85tgmjg0x8lywqfqcu9uwa",
+    "confirmed": true
+  }
+}

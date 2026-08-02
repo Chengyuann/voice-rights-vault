@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:3031",
+    "consensus_version": 17
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "use_license",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  creator: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 111field.private,\n  purpose: 1u8.private,\n  policy_commitment: 444field.private,\n  expiry_height: 1000u32.private,\n  remaining_uses: 0u32.private,\n  revocation_id: 218947262885719160539577035146185427522903088082038125034735911699137704515field.private,\n  license_nonce: 777field.private,\n  _nonce: 7224331275248127252911467883960278289748598945985871865739136411392149598108group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  creator: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 111field.private,\n  purpose: 1u8.private,\n  content_commitment: 888field.private,\n  policy_commitment: 444field.private,\n  used_at_height: 23u32.private,\n  license_nonce: 777field.private,\n  use_index: 0u32.private,\n  _nonce: 8412965635356302340072192181532942006244175345945628760138471137263375864778group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: voice_rights_v1.aleo,\n  function_name: use_license,\n  arguments: [\n    23u32,\n    218947262885719160539577035146185427522903088082038125034735911699137704515field\n  ]\n}"
+  ],
+  "transaction_id": "at1ngkr9kt7d0dd992hqeqrf73235259g5u3x9vqxgk6jf093hj4cgqv8jct5",
+  "stats": {
+    "storage_cost": 3524,
+    "execution_cost": 212,
+    "priority_fee": 0,
+    "total_cost": 3736
+  },
+  "broadcast": {
+    "fee_id": "au1ukw3k438g4kp558fke2g0srxduns9egtguxxzxnwvzjql8fwr5psgc0uqv",
+    "fee_transaction_id": "at1fk7pc96243uh5d3z3vmqjcfpj77m2rrlsng6e3w6n0wzxtxpqg9sllazvs",
+    "confirmed": true
+  }
+}

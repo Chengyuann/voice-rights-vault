@@ -1,0 +1,9 @@
+.devnode/
+.tools/
+.agent/
+.playwright-cli/
+programs/*/build/
+programs/*/.env
+*.log
+.secrets/
+.DS_Store

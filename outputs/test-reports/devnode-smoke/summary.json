@@ -1,0 +1,18 @@
+{
+  "deploy_tx": "at1sl9jyw0pwpyynfksszngwdr4q3ucjzhucu5dka8ahuwlc3nrgvgsssgw0y",
+  "program_size_bytes": 5096,
+  "register_tx": "at1m4e86ta3sehueqrstzmck0ekk67zen059wzr3tku8mqgpl9x9g9s2p7kee",
+  "issue_tx": "at1g4xza06mtaf7rwleupr98qge9rnnq7dfhzavh24wxml9y0zd8ggqa58wwv",
+  "use_tx": "at1cx2e8uddvrtv6euzrkl4huffmjqvckggz6p9e3dqce5dht4gp5rqa2vk33",
+  "use_last_quota_tx": "at1m8k40zmd5ck6zr883k9g0z86a2yedl0ct3kn24e3k5t6j256jgfqzg09vc",
+  "publish_receipt_tx": "at1l6any7s94zdsyahy5zn4gsskza5hu3vrcsswm4xg2n9vw35ekvqs6cde2v",
+  "published_receipt_commitment": "5995717436235304422299799340888026181168199597914901529216463999649839251551field",
+  "revoke_tx": "at1s7ss9a0n7w7mcww7m02u4gn7dzlhs4tl4u7zdg9l350drqvgegzq22ptp7",
+  "remaining_uses": 1,
+  "final_remaining_uses": 0,
+  "replay_rejected": true,
+  "exhausted_quota_rejected": true,
+  "wrong_purpose_rejected": true,
+  "revoked_license_rejected": true,
+  "receipt_commitment_published": true
+}

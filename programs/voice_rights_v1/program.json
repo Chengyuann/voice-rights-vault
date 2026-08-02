@@ -1,0 +1,9 @@
+{
+  "program": "voice_rights_v1.aleo",
+  "version": "0.1.0",
+  "description": "Private, usage-limited AI voice licenses and usage receipts on Aleo.",
+  "license": "MIT",
+  "leo": "4.4.0",
+  "dependencies": null,
+  "dev_dependencies": null
+}

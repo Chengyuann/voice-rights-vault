@@ -1,0 +1,26 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:3031",
+    "consensus_version": 17
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "issue_license",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 111field.private,\n  issuer_commitment: 222field.private,\n  policy_root: 333field.private,\n  identity_version: 2u32.private,\n  issued_licenses: 1u32.private,\n  _nonce: 6736723441037401893225395236581172882453794423659239725021392833041217825585group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  creator: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 111field.private,\n  purpose: 1u8.private,\n  policy_commitment: 444field.private,\n  expiry_height: 1000u32.private,\n  remaining_uses: 1u32.private,\n  revocation_id: 218947262885719160539577035146185427522903088082038125034735911699137704515field.private,\n  license_nonce: 777field.private,\n  _nonce: 7880646243617327711434488301999275135817193236872144912573956101243221782403group.public,\n  _version: 1u8.public\n}"
+  ],
+  "transaction_id": "at1pa3tnxt3u6dazrltvawfdq9m48kzzg6mvh020uw35nza6g7qyg9q005xr2",
+  "stats": {
+    "storage_cost": 3474,
+    "execution_cost": 0,
+    "priority_fee": 0,
+    "total_cost": 3474
+  },
+  "broadcast": {
+    "fee_id": "au1ceq8925aqnhnhkw6pvtf6ttmwer6gku6zm74j5hs77q5lwckrcrqks93aw",
+    "fee_transaction_id": "at1660j24yvak0384lfg89yvgwyhak8kh2e7ssaa0nmygfr3hn9pvqsppgm5y",
+    "confirmed": true
+  }
+}

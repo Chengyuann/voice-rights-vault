@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:3031",
+    "consensus_version": 17
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "use_license",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  creator: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 111field.private,\n  purpose: 1u8.private,\n  policy_commitment: 444field.private,\n  expiry_height: 1000u32.private,\n  remaining_uses: 0u32.private,\n  revocation_id: 218947262885719160539577035146185427522903088082038125034735911699137704515field.private,\n  license_nonce: 777field.private,\n  _nonce: 130949765702706261178807962919666162935739831699708126733792970299482266506group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  creator: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 111field.private,\n  purpose: 1u8.private,\n  content_commitment: 888field.private,\n  policy_commitment: 444field.private,\n  used_at_height: 23u32.private,\n  license_nonce: 777field.private,\n  use_index: 0u32.private,\n  _nonce: 2941382190696717779818728205371060503739449136811897327752861167836672480613group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: voice_rights_v1.aleo,\n  function_name: use_license,\n  arguments: [\n    23u32,\n    218947262885719160539577035146185427522903088082038125034735911699137704515field\n  ]\n}"
+  ],
+  "transaction_id": "at1d25fsej8c7kg0kzwt9g9exffs8fn9s8u9a332vz876lnpta0gvgqr805gq",
+  "stats": {
+    "storage_cost": 3524,
+    "execution_cost": 212,
+    "priority_fee": 0,
+    "total_cost": 3736
+  },
+  "broadcast": {
+    "fee_id": "au1fet8f3jfka3dhnrwvj4kq3fsr2uvazkt07sph4k2u5kf6xm2ps9suzwye7",
+    "fee_transaction_id": "at1xuw4rfwxy2rym6sjhr346dhuyftnh0endd4rsx8yavvsldthzvpqqlxlvt",
+    "confirmed": true
+  }
+}

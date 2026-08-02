@@ -1,0 +1,12 @@
+{
+  "deploy_tx": "at1kzjmqsqdyl6zxwlgs5pgv02k3ptuqs2jxdf72c3k2hrgj0cxqgzs0c49xt",
+  "program_size_bytes": 5096,
+  "total_variables": 589600,
+  "total_constraints": 472059,
+  "register_tx": "at14szv6mu5s0g2y20xxm3p6t4g60rhk6gp3nawwuy3zrdcswa39qpsts0qmu",
+  "issue_tx": "at1pa3tnxt3u6dazrltvawfdq9m48kzzg6mvh020uw35nza6g7qyg9q005xr2",
+  "use_tx": "at1ngkr9kt7d0dd992hqeqrf73235259g5u3x9vqxgk6jf093hj4cgqv8jct5",
+  "publish_receipt_tx": "at1v58k65070jmkkgnlg3v3sr4kke82u9naskxgfc4845667vghc5qstcv69l",
+  "published_receipt_commitment": "1974912761631867135116997602543233337795631569909509792319200530023688509283field",
+  "proof_chain_accepted": true
+}

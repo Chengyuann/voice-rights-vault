@@ -1,0 +1,65 @@
+{
+  "config": {
+    "address": "aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy",
+    "network": "testnet",
+    "endpoint": "https://api.explorer.provable.com/v1",
+    "consensus_version": 18
+  },
+  "deployments": [
+    {
+      "program_id": "voice_rights_v1.aleo",
+      "transaction_id": "at1wa9erh058vw4u6tzkwm0qm7yy2cjs0ag37vm8klgm6rvf2gfysfqx85qlr",
+      "stats": {
+        "program_size_bytes": 5096,
+        "max_program_size_bytes": 2048000,
+        "total_variables": 589600,
+        "total_constraints": 472059,
+        "max_variables": 2097152,
+        "max_constraints": 2097152,
+        "storage_cost": 9108000,
+        "namespace_cost": 1000000,
+        "synthesis_cost": 2897115,
+        "constructor_cost": 2000,
+        "priority_fee": 0,
+        "total_cost": 13007115,
+        "function_costs": [
+          {
+            "name": "register_voice",
+            "finalize_cost": 0,
+            "storage_cost": 1987,
+            "execution_cost": 1987
+          },
+          {
+            "name": "issue_license",
+            "finalize_cost": 0,
+            "storage_cost": 3474,
+            "execution_cost": 3474
+          },
+          {
+            "name": "use_license",
+            "finalize_cost": 212,
+            "storage_cost": 3524,
+            "execution_cost": 3736
+          },
+          {
+            "name": "revoke_license",
+            "finalize_cost": 532,
+            "storage_cost": 2449,
+            "execution_cost": 2981
+          },
+          {
+            "name": "publish_receipt",
+            "finalize_cost": 532,
+            "storage_cost": 1923,
+            "execution_cost": 2455
+          }
+        ]
+      },
+      "broadcast": {
+        "fee_id": "au1dxdqtcewg0pdgvr30897qr2hd6upsgkqtd732fnx6w2ue5ksvs9s433552",
+        "fee_transaction_id": "at12j6j774xtdfnmqgm3vw6lj92c2h2rd289ht3spu3hdj9jr55xgzq5sw6w5",
+        "confirmed": true
+      }
+    }
+  ]
+}

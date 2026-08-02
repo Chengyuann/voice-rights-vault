@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:3030",
+    "consensus_version": 17
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "use_license",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  creator: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 101field.private,\n  purpose: 1u8.private,\n  policy_commitment: 404field.private,\n  expiry_height: 1000u32.private,\n  remaining_uses: 0u32.private,\n  revocation_id: 228205752602522379965812843455902163042021793354017428607707609752660886635field.private,\n  license_nonce: 606field.private,\n  _nonce: 8155987858405037645996124442747954829976340211511061107413440732990546540991group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  creator: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 101field.private,\n  purpose: 1u8.private,\n  content_commitment: 1001field.private,\n  policy_commitment: 404field.private,\n  used_at_height: 24u32.private,\n  license_nonce: 606field.private,\n  use_index: 0u32.private,\n  _nonce: 4597115862609771427451769664323799769738876008198322737119846608837407623759group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: voice_rights_v1.aleo,\n  function_name: use_license,\n  arguments: [\n    24u32,\n    228205752602522379965812843455902163042021793354017428607707609752660886635field\n  ]\n}"
+  ],
+  "transaction_id": "at1m8k40zmd5ck6zr883k9g0z86a2yedl0ct3kn24e3k5t6j256jgfqzg09vc",
+  "stats": {
+    "storage_cost": 3524,
+    "execution_cost": 212,
+    "priority_fee": 0,
+    "total_cost": 3736
+  },
+  "broadcast": {
+    "fee_id": "au13dmewhmtvy8yygxuf4cnjp4ergdaej3pkxtk8gzxvw0fmslaygzsw2pcjn",
+    "fee_transaction_id": "at1jkdatwyzca7zuetp0amll7kkuhd6ksl698ncy5jnt7n4flehacrqvathux",
+    "confirmed": true
+  }
+}

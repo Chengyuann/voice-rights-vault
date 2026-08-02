@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:3030",
+    "consensus_version": 17
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "use_license",
+  "outputs": [
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  creator: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 101field.private,\n  purpose: 1u8.private,\n  policy_commitment: 404field.private,\n  expiry_height: 1000u32.private,\n  remaining_uses: 0u32.private,\n  revocation_id: 1807489127622554304012405842476172143846976033608003562723189344149083871103field.private,\n  license_nonce: 707field.private,\n  _nonce: 7281344901704780805872052654885488586426977339142245209106765950151079581795group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  creator: aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px.private,\n  voice_commitment: 101field.private,\n  purpose: 1u8.private,\n  content_commitment: 1003field.private,\n  policy_commitment: 404field.private,\n  used_at_height: 28u32.private,\n  license_nonce: 707field.private,\n  use_index: 0u32.private,\n  _nonce: 7931282511618961546279350850950817210474021863810604879698442081565642949048group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: voice_rights_v1.aleo,\n  function_name: use_license,\n  arguments: [\n    28u32,\n    1807489127622554304012405842476172143846976033608003562723189344149083871103field\n  ]\n}"
+  ],
+  "transaction_id": "at1t9m4udd56u7valvg7a6t0ypvxu89rjlfwlsm9ltj2hu9wrefuspqr6wacj",
+  "stats": {
+    "storage_cost": 3524,
+    "execution_cost": 212,
+    "priority_fee": 0,
+    "total_cost": 3736
+  },
+  "broadcast": {
+    "fee_id": "au1vlqz7c5llq72fx09yg9x37jckry6mfawkpk9ejqy9xfyz0auu5qqzre9cu",
+    "fee_transaction_id": "at1jxaqj83l8dwuqk0pcwyj2tc9f2e4rmsxcqkg9hfnfjlc9za2tqgqfnhfky",
+    "confirmed": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "config": {
+    "address": "aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy",
+    "network": "testnet",
+    "endpoint": "https://api.explorer.provable.com/v1",
+    "consensus_version": 18
+  },
+  "program": "voice_rights_v1.aleo",
+  "function": "use_license",
+  "outputs": [
+    "{\n  owner: aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy.private,\n  creator: aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy.private,\n  voice_commitment: 111field.private,\n  purpose: 1u8.private,\n  policy_commitment: 333field.private,\n  expiry_height: 18409753u32.private,\n  remaining_uses: 1u32.private,\n  revocation_id: 218947262885719160539577035146185427522903088082038125034735911699137704515field.private,\n  license_nonce: 777field.private,\n  _nonce: 3250451762082833881566459671019649816567393660478244666608203121590683843097group.public,\n  _version: 1u8.public\n}",
+    "{\n  owner: aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy.private,\n  creator: aleo157paujr5h54grzxt3t2ggw2gxun29gu8eh9q3dxkvffvp87f5yzs3lmcwy.private,\n  voice_commitment: 111field.private,\n  purpose: 1u8.private,\n  content_commitment: 444field.private,\n  policy_commitment: 333field.private,\n  used_at_height: 18399760u32.private,\n  license_nonce: 777field.private,\n  use_index: 1u32.private,\n  _nonce: 372582293014451744833848097541441804045128513325429950099422897688941157877group.public,\n  _version: 1u8.public\n}",
+    "{\n  program_id: voice_rights_v1.aleo,\n  function_name: use_license,\n  arguments: [\n    18399760u32,\n    218947262885719160539577035146185427522903088082038125034735911699137704515field\n  ]\n}"
+  ],
+  "transaction_id": "at1zzg59ljxkrwr3c2wth7zeugspzz3gxetljat6f3ej3t0s9dtc5zqk92hxz",
+  "stats": {
+    "storage_cost": 3524,
+    "execution_cost": 212,
+    "priority_fee": 0,
+    "total_cost": 3736
+  },
+  "broadcast": {
+    "fee_id": "au1z7q0ce5nh07yxa7p6jymgerwpl6tzydzc8rtyyjlh0xqqphhsgyq83sdf8",
+    "fee_transaction_id": "at1x6yf2n32yqxquqjzs769sk2qfm0gvd58qhsfca72rdmf42uncupq2nsz74",
+    "confirmed": true
+  }
+}

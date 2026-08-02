@@ -1,0 +1,61 @@
+{
+  "config": {
+    "address": "aleo1rhgdu77hgyqd3xjj8ucu3jj9r2krwz6mnzyd80gncr5fxcwlh5rsvzp9px",
+    "network": "testnet",
+    "endpoint": "http://127.0.0.1:3030",
+    "consensus_version": 17
+  },
+  "deployments": [
+    {
+      "program_id": "voice_rights_v1.aleo",
+      "transaction_id": "at1sl9jyw0pwpyynfksszngwdr4q3ucjzhucu5dka8ahuwlc3nrgvgsssgw0y",
+      "stats": {
+        "program_size_bytes": 5096,
+        "max_program_size_bytes": 2048000,
+        "storage_cost": 9108000,
+        "namespace_cost": 1000000,
+        "synthesis_cost": 240328,
+        "constructor_cost": 2000,
+        "priority_fee": 0,
+        "total_cost": 10350328,
+        "function_costs": [
+          {
+            "name": "register_voice",
+            "finalize_cost": 0,
+            "storage_cost": 1987,
+            "execution_cost": 1987
+          },
+          {
+            "name": "issue_license",
+            "finalize_cost": 0,
+            "storage_cost": 3474,
+            "execution_cost": 3474
+          },
+          {
+            "name": "use_license",
+            "finalize_cost": 212,
+            "storage_cost": 3524,
+            "execution_cost": 3736
+          },
+          {
+            "name": "revoke_license",
+            "finalize_cost": 532,
+            "storage_cost": 2449,
+            "execution_cost": 2981
+          },
+          {
+            "name": "publish_receipt",
+            "finalize_cost": 532,
+            "storage_cost": 1923,
+            "execution_cost": 2455
+          }
+        ]
+      },
+      "broadcast": {
+        "fee_id": "au1sm6hrl2f0u0cpdlzc7t46kf07yfyc9y7qcf9tzz8dalrs6cz75rszfw6t0",
+        "fee_transaction_id": "at1hfujw73xvx2z2kvl3f6pdvagzws4uswx5sp700yvxla5lmf0ev8s6pp72z",
+        "confirmed": true
+      }
+    }
+  ]
+}
