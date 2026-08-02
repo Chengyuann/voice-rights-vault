@@ -26,7 +26,9 @@ is not currently available to ordinary free accounts.
 
 ## Prerequisite
 
-Push this repository to GitHub or GitLab. Do not commit `.secrets/`.
+GitHub repository: https://github.com/Chengyuann/voice-rights-vault
+
+Do not commit `.secrets/`.
 
 Required application variables:
 

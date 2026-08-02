@@ -2,6 +2,8 @@
 
 Private, usage-limited AI voice licensing on Aleo.
 
+Repository: https://github.com/Chengyuann/voice-rights-vault
+
 VoiceRights Vault models an AI voice license as an Aleo private Record. A
 license carries a private purpose, policy commitment, expiry height, remaining
 quota, a creator-bound revocation key, and nonce. Every authorized synthesis consumes the old

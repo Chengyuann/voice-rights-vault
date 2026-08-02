@@ -86,7 +86,7 @@ Short description:
 Required URLs:
 
 ```text
-Repository:  PENDING
+Repository:  https://github.com/Chengyuann/voice-rights-vault
 Demo:        PENDING
 Video:       PENDING
 Aleo program: https://testnet.explorer.provable.com/program/voice_rights_v1.aleo
