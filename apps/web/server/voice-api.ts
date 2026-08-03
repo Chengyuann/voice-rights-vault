@@ -12,6 +12,30 @@ const credentialsPath = process.env.BAILIAN_CREDENTIALS_FILE || join(import.meta
 const localSamplePath = process.env.VOICE_SAMPLE_FILE || join(import.meta.dirname, '../../../.secrets/voice/creator-voice-identity.mp3')
 const cosyVoiceProfilePath = process.env.COSYVOICE_PROFILE_FILE || join(import.meta.dirname, '../../../.secrets/cosyvoice-profile.json')
 const maxUploadBytes = 12 * 1024 * 1024
+const allowedAudioContentTypes = new Set([
+  'application/octet-stream',
+  'audio/aac',
+  'audio/flac',
+  'audio/m4a',
+  'audio/mp4',
+  'audio/mpeg',
+  'audio/ogg',
+  'audio/wav',
+  'audio/webm',
+  'audio/x-m4a',
+  'audio/x-wav',
+  'video/webm',
+])
+
+class RequestValidationError extends Error {
+  readonly statusCode: 400 | 413 | 415
+
+  constructor(message: string, statusCode: 400 | 413 | 415 = 400) {
+    super(message)
+    this.name = 'RequestValidationError'
+    this.statusCode = statusCode
+  }
+}
 
 export type VoiceApiMiddleware = (
   request: IncomingMessage,
@@ -159,10 +183,38 @@ async function readRequestBody(request: NodeJS.ReadableStream) {
   for await (const chunk of request) {
     const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)
     received += buffer.length
-    if (received > maxUploadBytes) throw new Error('Audio file exceeds the 12 MB limit.')
+    if (received > maxUploadBytes) throw new RequestValidationError('Request body exceeds the 12 MB limit.', 413)
     chunks.push(buffer)
   }
   return Buffer.concat(chunks)
+}
+
+export function detectAudioFormat(audio: Uint8Array) {
+  if (audio.length >= 12 && Buffer.from(audio.subarray(0, 4)).toString('ascii') === 'RIFF' && Buffer.from(audio.subarray(8, 12)).toString('ascii') === 'WAVE') return 'wav'
+  if (audio.length >= 4 && Buffer.from(audio.subarray(0, 4)).toString('ascii') === 'OggS') return 'ogg'
+  if (audio.length >= 4 && Buffer.from(audio.subarray(0, 4)).toString('ascii') === 'fLaC') return 'flac'
+  if (audio.length >= 4 && audio[0] === 0x1a && audio[1] === 0x45 && audio[2] === 0xdf && audio[3] === 0xa3) return 'webm'
+  if (audio.length >= 12 && Buffer.from(audio.subarray(4, 8)).toString('ascii') === 'ftyp') return 'mp4'
+  if (audio.length >= 3 && Buffer.from(audio.subarray(0, 3)).toString('ascii') === 'ID3') return 'mp3'
+  if (audio.length >= 2 && audio[0] === 0xff && (audio[1] & 0xe0) === 0xe0) {
+    return (audio[1] & 0x06) === 0 ? 'aac' : 'mp3'
+  }
+  return null
+}
+
+export function validateAudioUpload(contentType: string | undefined, audio: Uint8Array) {
+  const normalizedContentType = contentType?.split(';', 1)[0]?.trim().toLowerCase() || 'application/octet-stream'
+  if (!allowedAudioContentTypes.has(normalizedContentType)) {
+    throw new RequestValidationError('Unsupported audio content type.', 415)
+  }
+  if (!audio.length) throw new RequestValidationError('No audio data received.')
+  const format = detectAudioFormat(audio)
+  if (!format) throw new RequestValidationError('Unsupported or invalid audio file.', 415)
+  return format
+}
+
+function requestErrorStatus(error: unknown, upstreamStatus = 502) {
+  return error instanceof RequestValidationError ? error.statusCode : upstreamStatus
 }
 
 async function convertToPcm(audio: Buffer) {
@@ -512,22 +564,22 @@ export function attachVoiceApi(middlewares: VoiceApiMiddlewareServer) {
   })
 
   middlewares.use('/api/voice/transcribe', async (request, response) => {
-        response.setHeader('Content-Type', 'application/json; charset=utf-8')
-        if (request.method !== 'POST') {
-          response.statusCode = 405
-          response.end(JSON.stringify({ error: 'Method not allowed.' }))
-          return
-        }
+    response.setHeader('Content-Type', 'application/json; charset=utf-8')
+    if (request.method !== 'POST') {
+      response.statusCode = 405
+      response.end(JSON.stringify({ error: 'Method not allowed.' }))
+      return
+    }
 
-        try {
-          const audio = await readRequestBody(request)
-          if (!audio.length) throw new Error('No audio data received.')
-          response.end(JSON.stringify(await transcribeWithBailian(audio)))
-        } catch (error) {
-          response.statusCode = 502
-          response.end(JSON.stringify({ error: error instanceof Error ? error.message : 'Transcription failed.' }))
-        }
-      })
+    try {
+      const audio = await readRequestBody(request)
+      validateAudioUpload(request.headers['content-type'], audio)
+      response.end(JSON.stringify(await transcribeWithBailian(audio)))
+    } catch (error) {
+      response.statusCode = requestErrorStatus(error)
+      response.end(JSON.stringify({ error: error instanceof Error ? error.message : 'Transcription failed.' }))
+    }
+  })
 
   middlewares.use('/api/voice/synthesize', async (request, response) => {
     if (request.method !== 'POST') {
@@ -536,10 +588,15 @@ export function attachVoiceApi(middlewares: VoiceApiMiddlewareServer) {
       return
     }
     try {
-      const body = JSON.parse((await readRequestBody(request)).toString('utf8')) as { text?: string; provenance?: Partial<SynthesisProvenance> }
+      let body: { text?: string; provenance?: Partial<SynthesisProvenance> }
+      try {
+        body = JSON.parse((await readRequestBody(request)).toString('utf8')) as typeof body
+      } catch {
+        throw new RequestValidationError('Request body must be valid JSON.')
+      }
       const text = body.text?.trim() ?? ''
-      if (!text) throw new Error('Synthesis text is required.')
-      if (text.length > 600) throw new Error('Synthesis text exceeds the 600 character limit.')
+      if (!text) throw new RequestValidationError('Synthesis text is required.')
+      if (text.length > 600) throw new RequestValidationError('Synthesis text exceeds the 600 character limit.')
       const provenance = body.provenance
       if (
         !provenance
@@ -550,7 +607,7 @@ export function attachVoiceApi(middlewares: VoiceApiMiddlewareServer) {
         || typeof provenance.program !== 'string'
         || typeof provenance.livenessVerified !== 'boolean'
       ) {
-        throw new Error('Synthesis provenance is incomplete.')
+        throw new RequestValidationError('Synthesis provenance is incomplete.')
       }
       const result = await synthesizeWithCosyVoice(text, {
         provenanceId: provenance.provenanceId,
@@ -571,7 +628,7 @@ export function attachVoiceApi(middlewares: VoiceApiMiddlewareServer) {
       response.setHeader('X-Request-Id', result.requestId)
       response.end(result.audio)
     } catch (error) {
-      response.statusCode = 502
+      response.statusCode = requestErrorStatus(error)
       response.setHeader('Content-Type', 'application/json; charset=utf-8')
       response.end(JSON.stringify({ error: error instanceof Error ? error.message : 'Synthesis failed.' }))
     }
@@ -586,10 +643,10 @@ export function attachVoiceApi(middlewares: VoiceApiMiddlewareServer) {
     }
     try {
       const audio = await readRequestBody(request)
-      if (!audio.length) throw new Error('No audio data received.')
+      validateAudioUpload(request.headers['content-type'], audio)
       response.end(JSON.stringify({ provenance: await readEmbeddedVoiceProvenance(audio) }))
     } catch (error) {
-      response.statusCode = 502
+      response.statusCode = requestErrorStatus(error)
       response.end(JSON.stringify({ error: error instanceof Error ? error.message : 'Provenance read failed.' }))
     }
   })
@@ -640,14 +697,19 @@ export function attachVoiceApi(middlewares: VoiceApiMiddlewareServer) {
       return
     }
     try {
-      const body = JSON.parse((await readRequestBody(request)).toString('utf8')) as { prompt?: string }
+      let body: { prompt?: string }
+      try {
+        body = JSON.parse((await readRequestBody(request)).toString('utf8')) as typeof body
+      } catch {
+        throw new RequestValidationError('Request body must be valid JSON.')
+      }
       const prompt = body.prompt?.trim() || ''
-      if (!prompt) throw new Error('Policy prompt is required.')
-      if (prompt.length > 600) throw new Error('Policy prompt exceeds the 600 character limit.')
+      if (!prompt) throw new RequestValidationError('Policy prompt is required.')
+      if (prompt.length > 600) throw new RequestValidationError('Policy prompt exceeds the 600 character limit.')
       response.setHeader('Cache-Control', 'no-store')
       response.end(JSON.stringify(await evaluatePolicyWithBailian(prompt)))
     } catch (error) {
-      response.statusCode = 502
+      response.statusCode = requestErrorStatus(error)
       response.end(JSON.stringify({
         decision: 'block',
         purpose: 'UNKNOWN',

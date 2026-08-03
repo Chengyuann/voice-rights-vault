@@ -1,14 +1,14 @@
 # Deployment And Operations
 
-Updated: 2026-08-02
+Updated: 2026-08-03
 
 ## Requirements
 
 - Node.js 24;
 - FFmpeg and FFprobe;
 - built frontend in `apps/web/dist`;
-- Bailian credentials CSV;
-- CosyVoice profile JSON;
+- Bailian credentials as a CSV file or environment variables;
+- CosyVoice profile as a JSON file or environment variables;
 - optional private local preview MP3.
 
 ## Local Production Run
@@ -26,6 +26,11 @@ HOST=127.0.0.1 PORT=4174 npm start
 BAILIAN_CREDENTIALS_FILE
 COSYVOICE_PROFILE_FILE
 VOICE_SAMPLE_FILE
+BAILIAN_API_KEY
+BAILIAN_WORKSPACE_ID
+COSYVOICE_VOICE_ID
+COSYVOICE_TARGET_MODEL
+PREVIEW_SAMPLE_REQUIRED
 RATE_LIMIT_SALT
 METRICS_TOKEN
 ```
@@ -45,6 +50,19 @@ Authorization: Bearer $METRICS_TOKEN
 `/readyz` verifies credentials, voice profile, preview sample, FFmpeg, and
 FFprobe. The preview sample is never returned to non-local hosts.
 
+## Verification
+
+```bash
+cd apps/web
+npm test
+npm run build
+npm run lint
+npm run smoke:production
+```
+
+The production smoke checks health, readiness, SPA refresh, security headers,
+metrics authorization, audio type validation, and the 12 MB request limit.
+
 ## Container
 
 ```bash
@@ -60,6 +78,9 @@ The Compose service:
 - mounts secrets read-only;
 - enables `no-new-privileges`;
 - permits writes only under a bounded `/tmp`.
+
+The image health check reads the platform-provided `PORT`, so the same
+Dockerfile works with Zeabur's 4174 port and Render's 10000 port.
 
 ## TLS Reverse Proxy
 

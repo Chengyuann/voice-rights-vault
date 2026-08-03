@@ -191,7 +191,7 @@ HOST=0.0.0.0 PORT=4174 npm start
 
 The liveness endpoint is `GET /healthz`; `GET /readyz` checks the secret files,
 voice profile, preview sample, FFmpeg, and FFprobe. Production requires Node.js,
-FFmpeg, FFprobe, and the following server-side variables:
+FFmpeg and FFprobe. Credentials can come from mounted files:
 
 ```text
 BAILIAN_CREDENTIALS_FILE
@@ -201,10 +201,19 @@ RATE_LIMIT_SALT
 METRICS_TOKEN
 ```
 
-Use `.env.production.example` as the deployment template. Mount these files
-through the hosting platform's secret mechanism; never place them in `public/`,
-`dist/`, or client environment variables. `npm run serve` performs a fresh
-build and starts the production server.
+or directly from hosting environment variables:
+
+```text
+BAILIAN_API_KEY
+BAILIAN_WORKSPACE_ID
+COSYVOICE_VOICE_ID
+COSYVOICE_TARGET_MODEL=cosyvoice-v3.5-flash
+PREVIEW_SAMPLE_REQUIRED=0
+```
+
+Use `.env.production.example` as the deployment template. Never place secrets
+in `public/`, `dist/`, or client environment variables. `npm run serve`
+performs a fresh build and starts the production server.
 
 Set `TRUST_PROXY=1` only when the application is directly behind a trusted
 reverse proxy that overwrites `X-Forwarded-For`.
@@ -217,6 +226,15 @@ limits, returns `429` with `Retry-After`, and exposes authenticated metrics at
 Default burst limits are 5 synthesis, 10 transcription, 20 policy, 30
 provenance, and 60 Aleo lookup requests per client, each with gradual refill.
 Tune these values in `server/index.ts` for the selected hosting capacity.
+
+Production verification:
+
+```bash
+npm test
+npm run build
+npm run lint
+npm run smoke:production
+```
 
 Container files are included:
 
@@ -268,6 +286,13 @@ docs/OPERATIONS.md
 docs/FREE_HOSTING.md
 docs/SUBMISSION_CHECKLIST.md
 docs/DEVIATIONS.md
+docs/FINAL_SUBMISSION.md
+```
+
+Final VoiceRights-only demo video:
+
+```text
+apps/web/output/Voice-Rights-Aleo-refined.mp4
 ```
 
 For a no-local-tool public HTTPS demo, `docs/FREE_HOSTING.md` recommends

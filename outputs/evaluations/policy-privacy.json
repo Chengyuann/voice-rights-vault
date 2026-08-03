@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T13:14:19.898Z",
+  "generated_at": "2026-08-03T07:15:06.704Z",
   "policy": {
     "methodology": "Deterministic regression cases for the rule-first demo classifier; not an external benchmark.",
     "passed": 30,

@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local demo-video source, captures, and unrelated legacy output.
+output/video-capture/
+output/video-work/
+output/voice-rights-video/
+output/ZeroClaw-Aleo-refined.mp4

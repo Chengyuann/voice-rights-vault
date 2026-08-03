@@ -1,6 +1,6 @@
 # Submission Checklist
 
-Updated: 2026-08-02
+Updated: 2026-08-03
 
 Deadline from the implementation plan: 2026-08-14 23:59.
 
@@ -23,6 +23,12 @@ Deadline from the implementation plan: 2026-08-14 23:59.
 - [x] health, readiness, metrics, logs, limits, Docker, and Compose files
 - [x] architecture, threat model, privacy, operations, and limitations docs
 - [x] reproducible policy/privacy report
+- [x] focused Web API validation tests
+- [x] production HTTP smoke script
+- [x] real Bailian ASR, Qwen policy, CosyVoice, provenance, and Aleo lookup verification
+- [x] Git history scan against the current real secret values
+- [x] VoiceRights-only 78-second H.264/AAC demo video
+- [x] final submission document
 
 ## Still Required
 
@@ -31,12 +37,12 @@ Deadline from the implementation plan: 2026-08-14 23:59.
 - [x] prepare Zeabur/Render free-hosting configuration and secret variables
 - [ ] configure TLS domain
 - [ ] mount production secrets
-- [ ] run Docker image build with an active Docker daemon
+- [x] run Docker image build and container smoke with `PORT=10000`
 - [ ] publish public Demo URL
-- [ ] record and publish 120-second demo video
-- [ ] publish repository URL
+- [x] record final 78-second demo video
+- [x] publish repository URL
 - [ ] complete submission form
-- [ ] perform final claim review against `docs/DEVIATIONS.md`
+- [x] perform final claim review against `docs/DEVIATIONS.md`
 
 ## Final Verification Commands
 
@@ -46,8 +52,10 @@ ALEO_TEST_PRIVATE_KEY=... scripts/devnode-smoke.sh
 node scripts/evaluate-policy.mts
 cd apps/web
 npm ci
+npm test
 npm run build
 npm run lint
+npm run smoke:production
 ```
 
 Optional full proof:
@@ -88,6 +96,12 @@ Required URLs:
 ```text
 Repository:  https://github.com/Chengyuann/voice-rights-vault
 Demo:        PENDING
-Video:       PENDING
+Video:       apps/web/output/Voice-Rights-Aleo-refined.mp4
 Aleo program: https://testnet.explorer.provable.com/program/voice_rights_v1.aleo
+```
+
+Full submission copy and current evidence:
+
+```text
+docs/FINAL_SUBMISSION.md
 ```

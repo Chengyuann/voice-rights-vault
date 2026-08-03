@@ -10,6 +10,8 @@
     "serve": "npm run build && npm start",
     "evaluate": "node ../../scripts/evaluate-policy.mts",
     "lint": "oxlint",
+    "smoke:production": "node scripts/production-smoke.mjs",
+    "test": "node --test server/*.test.ts",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -30,6 +32,8 @@
     "ws": "^8.21.1"
   },
   "devDependencies": {
+    "@emnapi/core": "1.11.3",
+    "@emnapi/runtime": "1.11.3",
     "@types/node": "^24.13.2",
     "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",

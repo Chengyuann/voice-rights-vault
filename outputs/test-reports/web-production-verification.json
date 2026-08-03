@@ -1,0 +1,101 @@
+{
+  "verified_at": "2026-08-03",
+  "scope": "local production server with real upstream services and public Aleo Testnet lookup",
+  "web": {
+    "unit_tests": {
+      "passed": 4,
+      "total": 4
+    },
+    "build": "passed",
+    "lint": "passed",
+    "production_smoke": "passed",
+    "docker": {
+      "image_build": "passed",
+      "runtime_user": "node",
+      "port": 10000,
+      "health": "healthy",
+      "readyz": 200,
+      "bailian_asr": 200,
+      "policy": 200,
+      "cosyvoice": 200,
+      "aleo_lookup": 200,
+      "metrics_authorized": 200,
+      "metrics_unauthorized": 401
+    },
+    "readyz": {
+      "status": 200,
+      "ready": true,
+      "checks": {
+        "credentials": true,
+        "voiceProfile": true,
+        "previewSample": true,
+        "ffmpeg": true,
+        "ffprobe": true
+      }
+    },
+    "metrics_without_token": 401,
+    "invalid_audio_content_type": 415,
+    "oversize_audio": 413
+  },
+  "upstream_services": {
+    "bailian_asr": {
+      "status": 200,
+      "model": "qwen-audio-3.0-asr-flash-streaming",
+      "transcript": "Create voice identity."
+    },
+    "policy_allow": {
+      "status": 200,
+      "decision": "allow",
+      "purpose": "GAME_NPC",
+      "model": "qwen3.5-flash"
+    },
+    "policy_block": {
+      "status": 200,
+      "decision": "block",
+      "purpose": "POLITICAL",
+      "model": "qwen3.5-flash"
+    },
+    "cosyvoice": {
+      "status": 200,
+      "model": "cosyvoice-v3.5-flash",
+      "format": "MP3",
+      "sample_rate": 24000,
+      "channels": 1
+    },
+    "provenance": {
+      "status": 200,
+      "marker": "VoiceRights",
+      "version": 1,
+      "program": "voice_rights_v1.aleo",
+      "policy_decision": "allow",
+      "liveness_verified": true
+    }
+  },
+  "aleo": {
+    "transaction": "at1zzg59ljxkrwr3c2wth7zeugspzz3gxetljat6f3ej3t0s9dtc5zqk92hxz",
+    "status": "accepted",
+    "program": "voice_rights_v1.aleo",
+    "function": "use_license"
+  },
+  "security": {
+    "dependency_vulnerabilities": 0,
+    "real_secret_values_checked": 7,
+    "git_commits_checked": 2,
+    "git_history_secret_matches": 0
+  },
+  "video": {
+    "path": "apps/web/output/Voice-Rights-Aleo-refined.mp4",
+    "duration_seconds": 78.233333,
+    "width": 1920,
+    "height": 1080,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "sha256": "0d567400d420b9138dbc89bfadcfccc7518f81c022e036b92ce92142af36fd26",
+    "full_decode": "passed",
+    "black_frames": 0,
+    "representative_ocr": "passed",
+    "source_narration_asr": "passed",
+    "encoded_segment_asr": "passed"
+  },
+  "public_web_deployment": "pending user-confirmed Zeabur project creation"
+}

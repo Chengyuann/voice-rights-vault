@@ -1,6 +1,6 @@
 # Deviations
 
-Updated: 2026-08-02
+Updated: 2026-08-03
 
 ## Current
 
@@ -95,13 +95,15 @@ Vite development and a standalone Node HTTP server. The production server
 serves the built frontend, supports SPA fallback and audio range requests, and
 exposes `/healthz`.
 
-It still requires an external hosting platform, TLS termination, monitoring,
-and mounted secret files before public deployment. The server now includes
+It still requires an external hosting platform and TLS termination before
+public deployment. The server now includes
 per-IP endpoint limits, structured anonymized request logs, `/readyz`,
 authenticated `/metrics`, graceful shutdown, and Docker/Compose templates.
 
-The Docker and Compose files were statically validated in the current
-environment. An image build still requires a running Docker daemon.
+The Docker image was built locally on 2026-08-03. The container ran as the
+unprivileged `node` user with `PORT=10000`, reached Docker `healthy`, returned
+ready status, and passed real Bailian ASR, Qwen policy, CosyVoice, Aleo lookup,
+and metrics authorization checks.
 
 ### Free HTTPS Hosting Is Prepared, Not Yet Authorized
 
@@ -110,9 +112,31 @@ variables, so Zeabur or Render can deploy it without secret files. A Render
 Blueprint and dashboard-only Zeabur instructions are included in
 `docs/FREE_HOSTING.md`.
 
-The current local repository has no Git remote. Creating the public service
-still requires the user to push the repository and authorize GitHub/GitLab in
-the selected hosting dashboard.
+The public GitHub repository is current at
+`https://github.com/Chengyuann/voice-rights-vault`. Zeabur is authorized and
+open at the empty project dashboard. Creating the project and transmitting the
+server credentials still requires action-time user confirmation.
+
+### Production Validation Is Local Until Public Hosting Exists
+
+Local production verification passed with real Bailian ASR, Qwen policy
+classification, CosyVoice `cosyvoice-v3.5-flash`, embedded provenance, and an
+accepted Aleo Testnet transaction lookup. This is not presented as public HTTPS
+verification. Public `/readyz`, browser console, mobile, proxy, and full-flow
+checks remain pending until a Zeabur or Render URL exists.
+
+### Final Demo Video Is Complete
+
+The final VoiceRights-only video is 78.23 seconds, 1920x1080, H.264 with AAC
+audio:
+
+```text
+apps/web/output/Voice-Rights-Aleo-refined.mp4
+```
+
+Full decode, black-frame checks, representative OCR, per-scene narration ASR,
+and encoded-segment ASR passed. The whole-file Whisper Tiny check truncates
+long audio and is retained as a documented QA-tool limitation.
 
 ### No Royalty Settlement
 
