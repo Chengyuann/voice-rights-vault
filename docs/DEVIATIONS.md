@@ -105,7 +105,7 @@ unprivileged `node` user with `PORT=10000`, reached Docker `healthy`, returned
 ready status, and passed real Bailian ASR, Qwen policy, CosyVoice, Aleo lookup,
 and metrics authorization checks.
 
-### Free HTTPS Hosting Is Prepared, Not Yet Authorized
+### Free HTTPS Hosting Is Prepared, Not Yet Completed
 
 The server accepts Bailian and CosyVoice credentials directly from environment
 variables, so Zeabur or Render can deploy it without secret files. A Render
@@ -113,9 +113,13 @@ Blueprint and dashboard-only Zeabur instructions are included in
 `docs/FREE_HOSTING.md`.
 
 The public GitHub repository is current at
-`https://github.com/Chengyuann/voice-rights-vault`. Zeabur is authorized and
-open at the empty project dashboard. Creating the project and transmitting the
-server credentials still requires action-time user confirmation.
+`https://github.com/Chengyuann/voice-rights-vault`. On 2026-08-03, Zeabur's
+new-project flow for this account showed a server purchase flow rather than a
+free shared-service path, so no Zeabur server was purchased. Render Blueprint
+fallback opened successfully through GitHub OAuth, but GitHub disabled the
+Render authorization button behind account security / 2FA management UI. Public
+deployment therefore still requires the user to complete hosting login/security
+confirmation and enter the prepared environment variables.
 
 ### Production Validation Is Local Until Public Hosting Exists
 
@@ -127,16 +131,17 @@ checks remain pending until a Zeabur or Render URL exists.
 
 ### Final Demo Video Is Complete
 
-The final VoiceRights-only video is 78.23 seconds, 1920x1080, H.264 with AAC
+The final VoiceRights-only video is 80.73 seconds, 1920x1080, H.264 with AAC
 audio:
 
 ```text
 apps/web/output/Voice-Rights-Aleo-refined.mp4
 ```
 
-Full decode, black-frame checks, representative OCR, per-scene narration ASR,
-and encoded-segment ASR passed. The whole-file Whisper Tiny check truncates
-long audio and is retained as a documented QA-tool limitation.
+Full decode, black-frame checks, representative OCR, CosyVoice narration ASR,
+original VoxCPM2 demo-voice ASR, BGM mix, visible click-flow OCR, and
+encoded-segment ASR passed. The opening phrase was changed to "Artificial
+intelligence" to avoid TTS pronouncing `AI` as separate letters.
 
 ### No Royalty Settlement
 

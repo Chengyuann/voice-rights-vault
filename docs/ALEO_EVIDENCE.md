@@ -291,6 +291,12 @@ desktop/mobile horizontal overflow: false
 console warnings/errors: 0
 ```
 
+The injected-wallet audit validates the app-side adapter contract and ordering,
+but it is not a substitute for a recorded run against an installed Shield
+Wallet extension. No Shield/Aleo browser extension was installed in the active
+Chrome profile on 2026-08-03, so the real-extension compatibility item remains
+open.
+
 Screenshots:
 
 ```text

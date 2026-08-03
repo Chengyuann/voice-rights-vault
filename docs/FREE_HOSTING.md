@@ -1,10 +1,11 @@
 # Free HTTPS Hosting
 
-Updated: 2026-08-02
+Updated: 2026-08-03
 
 ## Recommendation
 
-Use **Zeabur Free** for the first public demo:
+Try **Zeabur Free** first only if the account still exposes shared-service
+deployment without buying a server:
 
 - dashboard-only Git deployment;
 - Dockerfile support;
@@ -62,16 +63,26 @@ record or upload their own sample.
 
 Free-plan cold starts are expected after inactivity.
 
+On 2026-08-03 this account's Zeabur `/new` flow showed "choose server" and a
+server-purchase sequence. Do not proceed there unless a free shared-service path
+is visible.
+
 ## Render Dashboard
 
 The repository includes `render.yaml`.
 
-1. Open Render and create a Blueprint from the Git repository.
-2. Confirm the `voice-rights-vault` free Web Service.
-3. Enter the four secret values marked `sync: false`.
-4. Deploy.
-5. Verify `/readyz`.
-6. Use the generated HTTPS `onrender.com` address.
+1. Open Render and create a Blueprint from the Git repository:
+
+```text
+https://dashboard.render.com/blueprint/new?repo=https://github.com/Chengyuann/voice-rights-vault
+```
+
+2. Complete GitHub OAuth and any account security / 2FA prompt.
+3. Confirm the `voice-rights-vault` free Web Service.
+4. Enter the four secret values marked `sync: false`.
+5. Deploy.
+6. Verify `/readyz`.
+7. Use the generated HTTPS `onrender.com` address.
 
 Render sets `PORT=10000` in the supplied Blueprint.
 

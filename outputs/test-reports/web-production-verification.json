@@ -104,5 +104,5 @@
     "narration_speed": "CosyVoice narration time-compressed 1.22x without pitch shift",
     "opening_pronunciation": "Uses full phrase Artificial intelligence; encoded ASR passed at 0.989 similarity"
   },
-  "public_web_deployment": "pending user-confirmed Zeabur project creation"
+  "public_web_deployment": "pending: Zeabur requires a server purchase path; Render GitHub OAuth requires user account security / 2FA confirmation"
 }

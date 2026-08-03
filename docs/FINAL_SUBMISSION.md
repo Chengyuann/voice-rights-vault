@@ -16,7 +16,7 @@ buyer, price, policy details, or remaining quota.
 
 ```text
 Repository: https://github.com/Chengyuann/voice-rights-vault
-Web demo:   PENDING ZEABUR DEPLOYMENT
+Web demo:   PENDING HOSTING LOGIN / SECURITY CONFIRMATION
 Aleo:       https://testnet.explorer.provable.com/program/voice_rights_v1.aleo
 Video:      apps/web/output/Voice-Rights-Aleo-refined.mp4
 ```
@@ -153,4 +153,6 @@ SHA-256: edfdd2dbda9ad35b331be5424740f23fa0234ab70e8542a6bc5b8c45a7cf2b87
 - The Shield browser path still needs a recorded compatibility run against a
   selected wallet release; the complete public Testnet flow is proven by
   accepted transactions.
-- The public Web URL remains pending until the Zeabur project is created.
+- The public Web URL remains pending because Zeabur currently presents a
+  server-purchase flow and Render GitHub OAuth requires account security / 2FA
+  confirmation.

@@ -295,6 +295,7 @@ output/Voice-Rights-Aleo-refined.mp4
 The following still require the confirmed public deployment:
 
 - Public Zeabur deployment.
+- Render fallback deployment if Zeabur free shared services are unavailable.
 - Public HTTPS URL verification.
 - Public `/readyz` check.
 - Public Policy flow verification.

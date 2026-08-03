@@ -35,8 +35,8 @@ Deadline from the implementation plan: 2026-08-14 23:59.
 - [ ] record Shield Wallet compatibility run
 - [ ] choose public hosting provider
 - [x] prepare Zeabur/Render free-hosting configuration and secret variables
-- [ ] configure TLS domain
-- [ ] mount production secrets
+- [ ] configure TLS domain / generated HTTPS host
+- [ ] mount production secrets in chosen host
 - [x] run Docker image build and container smoke with `PORT=10000`
 - [ ] publish public Demo URL
 - [x] record final 78-second demo video
@@ -98,6 +98,12 @@ Repository:  https://github.com/Chengyuann/voice-rights-vault
 Demo:        PENDING
 Video:       apps/web/output/Voice-Rights-Aleo-refined.mp4
 Aleo program: https://testnet.explorer.provable.com/program/voice_rights_v1.aleo
+```
+
+Prepared Render Blueprint URL:
+
+```text
+https://dashboard.render.com/blueprint/new?repo=https://github.com/Chengyuann/voice-rights-vault
 ```
 
 Full submission copy and current evidence:
