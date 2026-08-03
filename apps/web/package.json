@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/copy-demo-video.mjs",
     "start": "node server/index.ts",
     "serve": "npm run build && npm start",
     "evaluate": "node ../../scripts/evaluate-policy.mts",

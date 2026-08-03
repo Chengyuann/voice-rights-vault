@@ -48,6 +48,7 @@ const mimeTypes: Record<string, string> = {
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.mp3': 'audio/mpeg',
+  '.mp4': 'video/mp4',
   '.png': 'image/png',
   '.svg': 'image/svg+xml',
   '.woff': 'font/woff',
@@ -156,9 +157,39 @@ async function serveStatic(request: IncomingMessage, response: ServerResponse) {
   try {
     const fileStat = await stat(filePath)
     if (!fileStat.isFile()) throw new Error('Not a file.')
-    response.statusCode = 200
+    const range = request.headers.range?.match(/^bytes=(\d*)-(\d*)$/)
+    let start = 0
+    let end = fileStat.size - 1
+    if (range) {
+      const [, startValue, endValue] = range
+      if (startValue) {
+        start = Number(startValue)
+        end = endValue ? Number(endValue) : end
+      } else if (endValue) {
+        const suffixLength = Number(endValue)
+        start = Math.max(0, fileStat.size - suffixLength)
+      }
+      if (
+        !Number.isSafeInteger(start)
+        || !Number.isSafeInteger(end)
+        || start < 0
+        || end < start
+        || start >= fileStat.size
+      ) {
+        response.statusCode = 416
+        response.setHeader('Content-Range', `bytes */${fileStat.size}`)
+        response.end()
+        return
+      }
+      end = Math.min(end, fileStat.size - 1)
+      response.statusCode = 206
+      response.setHeader('Content-Range', `bytes ${start}-${end}/${fileStat.size}`)
+    } else {
+      response.statusCode = 200
+    }
     response.setHeader('Content-Type', mimeTypes[extname(filePath).toLowerCase()] || 'application/octet-stream')
-    response.setHeader('Content-Length', String(fileStat.size))
+    response.setHeader('Accept-Ranges', 'bytes')
+    response.setHeader('Content-Length', String(end - start + 1))
     if (filePath.endsWith('index.html')) {
       response.setHeader('Cache-Control', 'no-cache')
     } else {
@@ -168,7 +199,7 @@ async function serveStatic(request: IncomingMessage, response: ServerResponse) {
       response.end()
       return
     }
-    createReadStream(filePath).pipe(response)
+    createReadStream(filePath, { start, end }).pipe(response)
   } catch {
     sendJson(response, 404, { error: 'Static asset not found.' })
   }

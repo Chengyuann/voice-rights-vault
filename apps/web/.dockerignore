@@ -2,7 +2,8 @@ node_modules
 dist
 .git
 .playwright-cli
-output
+output/*
+!output/Voice-Rights-Aleo-refined.mp4
 *.log
 .env
 .env.*

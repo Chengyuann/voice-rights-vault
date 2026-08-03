@@ -67,6 +67,14 @@ try {
   assert.equal(routeRefresh.status, 200)
   assert.match(routeRefresh.headers.get('content-type') || '', /^text\/html/)
 
+  const demoVideo = await request('/demo-video.mp4', {
+    headers: { Range: 'bytes=0-1023' },
+  })
+  assert.equal(demoVideo.status, 206)
+  assert.equal(demoVideo.headers.get('content-type'), 'video/mp4')
+  assert.match(demoVideo.headers.get('content-range') || '', /^bytes 0-1023\/\d+$/)
+  assert.equal((await demoVideo.arrayBuffer()).byteLength, 1024)
+
   const metricsWithoutToken = await request('/metrics')
   assert.equal(metricsWithoutToken.status, 401)
 
