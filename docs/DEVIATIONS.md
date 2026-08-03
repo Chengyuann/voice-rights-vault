@@ -105,7 +105,7 @@ unprivileged `node` user with `PORT=10000`, reached Docker `healthy`, returned
 ready status, and passed real Bailian ASR, Qwen policy, CosyVoice, Aleo lookup,
 and metrics authorization checks.
 
-### Free HTTPS Hosting Is Prepared, Not Yet Completed
+### Free HTTPS Hosting Is Live On Render
 
 The server accepts Bailian and CosyVoice credentials directly from environment
 variables, so Zeabur or Render can deploy it without secret files. A Render
@@ -115,19 +115,26 @@ Blueprint and dashboard-only Zeabur instructions are included in
 The public GitHub repository is current at
 `https://github.com/Chengyuann/voice-rights-vault`. On 2026-08-03, Zeabur's
 new-project flow for this account showed a server purchase flow rather than a
-free shared-service path, so no Zeabur server was purchased. Render Blueprint
-fallback opened successfully through GitHub OAuth, but GitHub disabled the
-Render authorization button behind account security / 2FA management UI. Public
-deployment therefore still requires the user to complete hosting login/security
-confirmation and enter the prepared environment variables.
+free shared-service path, so no Zeabur server was purchased. The Render
+Blueprint fallback was deployed on the Free plan:
 
-### Production Validation Is Local Until Public Hosting Exists
+```text
+https://voice-rights-vault.onrender.com
+```
 
-Local production verification passed with real Bailian ASR, Qwen policy
-classification, CosyVoice `cosyvoice-v3.5-flash`, embedded provenance, and an
-accepted Aleo Testnet transaction lookup. This is not presented as public HTTPS
-verification. Public `/readyz`, browser console, mobile, proxy, and full-flow
-checks remain pending until a Zeabur or Render URL exists.
+The generated HTTPS host uses environment-only secrets.
+
+### Production Validation Passed On Public HTTPS
+
+Public production verification passed with real Bailian ASR, Qwen allow/block
+classification, CosyVoice `cosyvoice-v3.5-flash`, embedded provenance, accepted
+Aleo Testnet lookup, Creator / Licensee / Verifier browser flow, and desktop /
+mobile overflow checks.
+
+During public-browser verification, the original CSP blocked `fetch(blob:...)`
+for uploaded/recorded audio even though `media-src` allowed `blob:`. The server
+CSP now includes `blob:` in `connect-src`, with a production smoke regression
+assertion.
 
 ### Final Demo Video Is Complete
 

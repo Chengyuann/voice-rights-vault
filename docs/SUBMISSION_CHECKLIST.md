@@ -33,12 +33,12 @@ Deadline from the implementation plan: 2026-08-14 23:59.
 ## Still Required
 
 - [ ] record Shield Wallet compatibility run
-- [ ] choose public hosting provider
+- [x] choose public hosting provider: Render Free
 - [x] prepare Zeabur/Render free-hosting configuration and secret variables
-- [ ] configure TLS domain / generated HTTPS host
-- [ ] mount production secrets in chosen host
+- [x] configure generated HTTPS host
+- [x] mount production secrets in Render
 - [x] run Docker image build and container smoke with `PORT=10000`
-- [ ] publish public Demo URL
+- [x] publish public Demo URL
 - [x] record final 78-second demo video
 - [x] publish repository URL
 - [ ] complete submission form
@@ -95,7 +95,7 @@ Required URLs:
 
 ```text
 Repository:  https://github.com/Chengyuann/voice-rights-vault
-Demo:        PENDING
+Demo:        https://voice-rights-vault.onrender.com
 Video:       apps/web/output/Voice-Rights-Aleo-refined.mp4
 Aleo program: https://testnet.explorer.provable.com/program/voice_rights_v1.aleo
 ```
@@ -104,6 +104,14 @@ Prepared Render Blueprint URL:
 
 ```text
 https://dashboard.render.com/blueprint/new?repo=https://github.com/Chengyuann/voice-rights-vault
+```
+
+Public verification evidence:
+
+```text
+outputs/test-reports/render-public-e2e.json
+apps/web/output/playwright/render-public-e2e-desktop.png
+apps/web/output/playwright/render-public-mobile.png
 ```
 
 Full submission copy and current evidence:

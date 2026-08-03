@@ -1,0 +1,34 @@
+{
+  "url": "https://voice-rights-vault.onrender.com",
+  "timestamp": "2026-08-03T09:38:08.692Z",
+  "consoleErrors": [],
+  "pageErrors": [],
+  "failedResponses": [],
+  "steps": {
+    "home": {
+      "title": "VoiceRights Vault",
+      "status": "passed"
+    },
+    "upload": {
+      "status": "passed"
+    },
+    "identity": {
+      "status": "passed"
+    },
+    "license": {
+      "status": "passed"
+    },
+    "authorizedGeneration": {
+      "status": "passed"
+    },
+    "verifier": {
+      "status": "passed"
+    },
+    "policyBlock": {
+      "status": "passed"
+    }
+  },
+  "desktopOverflow": false,
+  "mobileOverflow": false,
+  "status": "passed"
+}

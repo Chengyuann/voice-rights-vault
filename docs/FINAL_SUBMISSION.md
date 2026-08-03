@@ -16,7 +16,7 @@ buyer, price, policy details, or remaining quota.
 
 ```text
 Repository: https://github.com/Chengyuann/voice-rights-vault
-Web demo:   PENDING HOSTING LOGIN / SECURITY CONFIRMATION
+Web demo:   https://voice-rights-vault.onrender.com
 Aleo:       https://testnet.explorer.provable.com/program/voice_rights_v1.aleo
 Video:      apps/web/output/Voice-Rights-Aleo-refined.mp4
 ```
@@ -95,6 +95,10 @@ Executed on 2026-08-03:
 | Docker image build | passed |
 | Docker container health on `PORT=10000` | healthy |
 | Container real ASR / policy / TTS / Aleo checks | passed |
+| Public HTTPS `/healthz` and `/readyz` | passed |
+| Public Creator / Licensee / Verifier browser flow | passed |
+| Public policy rejection before TTS | passed |
+| Public desktop / mobile overflow | none |
 | `/readyz` | HTTP 200, every check true |
 | Metrics without token | HTTP 401 |
 | Invalid audio MIME | HTTP 415 |
@@ -153,6 +157,5 @@ SHA-256: edfdd2dbda9ad35b331be5424740f23fa0234ab70e8542a6bc5b8c45a7cf2b87
 - The Shield browser path still needs a recorded compatibility run against a
   selected wallet release; the complete public Testnet flow is proven by
   accepted transactions.
-- The public Web URL remains pending because Zeabur currently presents a
-  server-purchase flow and Render GitHub OAuth requires account security / 2FA
-  confirmation.
+- The public Web service runs on Render Free and may cold-start after
+  inactivity.

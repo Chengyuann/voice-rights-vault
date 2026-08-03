@@ -4,6 +4,12 @@ Updated: 2026-08-03
 
 ## Recommendation
 
+Current production deployment:
+
+```text
+https://voice-rights-vault.onrender.com
+```
+
 Try **Zeabur Free** first only if the account still exposes shared-service
 deployment without buying a server:
 
@@ -85,6 +91,10 @@ https://dashboard.render.com/blueprint/new?repo=https://github.com/Chengyuann/vo
 7. Use the generated HTTPS `onrender.com` address.
 
 Render sets `PORT=10000` in the supplied Blueprint.
+
+The Blueprint was deployed successfully on 2026-08-03. `/healthz`, `/readyz`,
+real ASR, policy allow/block, CosyVoice, provenance, Aleo lookup, and the full
+browser demo were verified on the generated HTTPS domain.
 
 ## Verification
 

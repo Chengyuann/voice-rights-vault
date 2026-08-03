@@ -104,5 +104,19 @@
     "narration_speed": "CosyVoice narration time-compressed 1.22x without pitch shift",
     "opening_pronunciation": "Uses full phrase Artificial intelligence; encoded ASR passed at 0.989 similarity"
   },
-  "public_web_deployment": "pending: Zeabur requires a server purchase path; Render GitHub OAuth requires user account security / 2FA confirmation"
+  "public_web_deployment": {
+    "provider": "Render Free",
+    "url": "https://voice-rights-vault.onrender.com",
+    "https": true,
+    "healthz": 200,
+    "readyz": 200,
+    "browser_e2e": "passed",
+    "creator": "passed",
+    "licensee": "passed",
+    "verifier": "passed",
+    "policy_block": "passed",
+    "desktop_overflow": false,
+    "mobile_overflow": false,
+    "cold_start": "Free instance may take about 50 seconds to wake"
+  }
 }

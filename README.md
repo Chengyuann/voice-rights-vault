@@ -3,6 +3,7 @@
 Private, usage-limited AI voice licensing on Aleo.
 
 Repository: https://github.com/Chengyuann/voice-rights-vault
+Public demo: https://voice-rights-vault.onrender.com
 
 VoiceRights Vault models an AI voice license as an Aleo private Record. A
 license carries a private purpose, policy commitment, expiry height, remaining
@@ -295,10 +296,9 @@ Final VoiceRights-only demo video:
 apps/web/output/Voice-Rights-Aleo-refined.mp4
 ```
 
-For a no-local-tool public HTTPS demo, `docs/FREE_HOSTING.md` recommends
-Zeabur Free first and Render Free as the fallback. Both can build the existing
-Dockerfile from a Git repository and accept Bailian/CosyVoice values as online
-secret environment variables.
+The public HTTPS demo is deployed on Render Free using the repository
+`render.yaml` Blueprint. It may take about 50 seconds to wake after inactivity.
+Deployment and secret-management details are in `docs/FREE_HOSTING.md`.
 
 ## Security Boundaries
 
