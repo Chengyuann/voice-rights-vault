@@ -121,13 +121,13 @@ revoke_license:  at14666phn8z7ssryfsmlxn8n0xamuuvsx86krykaeqy8a0p6fhzgpssmthyc
 
 ## Video Verification
 
-The final VoiceRights-only video is 87.30 seconds, 1920x1080, 30 fps, H.264
+The final VoiceRights-only video is 80.73 seconds, 1920x1080, 30 fps, H.264
 with AAC stereo narration. Full decode, black-frame detection, representative
 OCR, CosyVoice narration ASR, original VoxCPM2 demo voice ASR, BGM mix, visible click-flow OCR, and encoded-segment ASR passed. No ZeroClaw or other
 project footage is included.
 
 ```text
-SHA-256: 1b53bb820b888a2de1f2e8625f59f40953c2cbe3ff59c0534a022f790a8aafa4
+SHA-256: edfdd2dbda9ad35b331be5424740f23fa0234ab70e8542a6bc5b8c45a7cf2b87
 ```
 
 ## Security Notes

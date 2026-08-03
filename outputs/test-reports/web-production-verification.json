@@ -85,22 +85,24 @@
   },
   "video": {
     "path": "apps/web/output/Voice-Rights-Aleo-refined.mp4",
-    "duration_seconds": 87.296,
+    "duration_seconds": 80.725333,
     "width": 1920,
     "height": 1080,
     "video_codec": "h264",
     "audio_codec": "aac",
-    "sha256": "1b53bb820b888a2de1f2e8625f59f40953c2cbe3ff59c0534a022f790a8aafa4",
+    "sha256": "edfdd2dbda9ad35b331be5424740f23fa0234ab70e8542a6bc5b8c45a7cf2b87",
     "full_decode": "passed",
     "black_frames": 0,
     "representative_ocr": "passed",
     "source_narration_asr": "passed",
     "encoded_segment_asr": "passed",
-    "size_bytes": 16506031,
+    "size_bytes": 16034325,
     "narration": "Alibaba Cloud CosyVoice authorized private voice profile",
     "demo_voice_playback": "original VoxCPM2 technology-founder-style voice, not based on a public figure",
     "background_music": "Lofi Fruits Music-Study With Me (Extended Version), mixed at low level and ducked under demo voice",
-    "click_flow": "real local browser recording with visible pointer and click pulses"
+    "click_flow": "real local browser recording with visible pointer and click pulses",
+    "narration_speed": "CosyVoice narration time-compressed 1.22x without pitch shift",
+    "opening_pronunciation": "Uses full phrase Artificial intelligence; encoded ASR passed at 0.989 similarity"
   },
   "public_web_deployment": "pending user-confirmed Zeabur project creation"
 }
