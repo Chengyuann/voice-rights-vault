@@ -121,13 +121,13 @@ revoke_license:  at14666phn8z7ssryfsmlxn8n0xamuuvsx86krykaeqy8a0p6fhzgpssmthyc
 
 ## Video Verification
 
-The final VoiceRights-only video is 78.23 seconds, 1920x1080, 30 fps, H.264
+The final VoiceRights-only video is 83.82 seconds, 1920x1080, 30 fps, H.264
 with AAC stereo narration. Full decode, black-frame detection, representative
-OCR, source narration ASR, and encoded-segment ASR passed. No ZeroClaw or other
+OCR, Reed narration ASR, real CosyVoice playback ASR, BGM mix, visible click-flow OCR, and encoded-segment ASR passed. No ZeroClaw or other
 project footage is included.
 
 ```text
-SHA-256: 0d567400d420b9138dbc89bfadcfccc7518f81c022e036b92ce92142af36fd26
+SHA-256: 29a5cbe4ba733be125b17fa5500099f0691552607bcffee518f10221dc975357
 ```
 
 ## Security Notes

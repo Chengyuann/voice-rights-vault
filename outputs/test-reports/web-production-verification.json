@@ -85,17 +85,22 @@
   },
   "video": {
     "path": "apps/web/output/Voice-Rights-Aleo-refined.mp4",
-    "duration_seconds": 78.233333,
+    "duration_seconds": 83.818667,
     "width": 1920,
     "height": 1080,
     "video_codec": "h264",
     "audio_codec": "aac",
-    "sha256": "0d567400d420b9138dbc89bfadcfccc7518f81c022e036b92ce92142af36fd26",
+    "sha256": "29a5cbe4ba733be125b17fa5500099f0691552607bcffee518f10221dc975357",
     "full_decode": "passed",
     "black_frames": 0,
     "representative_ocr": "passed",
     "source_narration_asr": "passed",
-    "encoded_segment_asr": "passed"
+    "encoded_segment_asr": "passed",
+    "size_bytes": 16394146,
+    "narration": "macOS enhanced Reed voice",
+    "demo_voice_playback": "real CosyVoice generated MP3 is played in-scene",
+    "background_music": "Lofi Fruits Music-Study With Me (Extended Version), mixed at low level and ducked under demo voice",
+    "click_flow": "real local browser recording with visible pointer and click pulses"
   },
   "public_web_deployment": "pending user-confirmed Zeabur project creation"
 }
