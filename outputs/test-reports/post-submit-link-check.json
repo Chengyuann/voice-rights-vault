@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-08-03T20:12:00+08:00",
+  "hackagent": {
+    "status": "submitted_and_editable",
+    "project": "VoiceRights Vault",
+    "repository": "https://github.com/Chengyuann/voice-rights-vault",
+    "website": "https://voice-rights-vault.onrender.com",
+    "demo": "https://voice-rights-vault.onrender.com",
+    "video": "https://voice-rights-vault.onrender.com/demo-video.mp4",
+    "team": "OmniBetter",
+    "team_size": 1,
+    "track": "AI × Privacy",
+    "description_length": 671,
+    "saved_confirmation": true
+  },
+  "links": {
+    "repository": {
+      "status": 200,
+      "public": true,
+      "default_branch": "main"
+    },
+    "web_demo": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8"
+    },
+    "healthz": {
+      "status": 200
+    },
+    "readyz": {
+      "status": 200,
+      "ready": true,
+      "all_checks": true
+    },
+    "demo_video": {
+      "range_status": 206,
+      "content_type": "video/mp4",
+      "content_range": "bytes 0-1023/16034325",
+      "sha256": "edfdd2dbda9ad35b331be5424740f23fa0234ab70e8542a6bc5b8c45a7cf2b87",
+      "browser_playback": true,
+      "duration_seconds": 80.725333,
+      "width": 1920,
+      "height": 1080
+    },
+    "aleo_program": {
+      "url": "https://testnet.explorer.provable.com/program/voice_rights_v1.aleo",
+      "status": 200
+    }
+  },
+  "aleo_transactions": {
+    "deploy": "accepted",
+    "register_voice": "accepted",
+    "issue_license": "accepted",
+    "use_license": "accepted",
+    "publish_receipt": "accepted",
+    "revoke_license": "accepted"
+  },
+  "public_api": {
+    "policy_allow": "allow / GAME_NPC",
+    "policy_block": "block / POLITICAL",
+    "asr": "passed",
+    "metrics_without_token": 401,
+    "browser_e2e": "passed",
+    "desktop_overflow": false,
+    "mobile_overflow": false
+  },
+  "status": "passed"
+}

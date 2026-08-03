@@ -96,7 +96,7 @@ Required URLs:
 ```text
 Repository:  https://github.com/Chengyuann/voice-rights-vault
 Demo:        https://voice-rights-vault.onrender.com
-Video:       apps/web/output/Voice-Rights-Aleo-refined.mp4
+Video:       https://voice-rights-vault.onrender.com/demo-video.mp4
 Aleo program: https://testnet.explorer.provable.com/program/voice_rights_v1.aleo
 ```
 

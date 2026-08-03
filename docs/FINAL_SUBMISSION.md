@@ -18,7 +18,7 @@ buyer, price, policy details, or remaining quota.
 Repository: https://github.com/Chengyuann/voice-rights-vault
 Web demo:   https://voice-rights-vault.onrender.com
 Aleo:       https://testnet.explorer.provable.com/program/voice_rights_v1.aleo
-Video:      apps/web/output/Voice-Rights-Aleo-refined.mp4
+Video:      https://voice-rights-vault.onrender.com/demo-video.mp4
 ```
 
 ## Why Aleo
