@@ -207,7 +207,7 @@ const server = createServer(async (request, response) => {
   response.setHeader('Permissions-Policy', 'camera=(), geolocation=(), microphone=(self)')
   response.setHeader(
     'Content-Security-Policy',
-    "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self' blob:; connect-src 'self' https://api.explorer.provable.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+    "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self' blob:; connect-src 'self' blob: https://api.explorer.provable.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
   )
 
   if (pathname === '/healthz') {

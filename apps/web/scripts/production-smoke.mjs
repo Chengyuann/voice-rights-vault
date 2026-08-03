@@ -58,7 +58,9 @@ try {
   assert.equal(home.status, 200)
   assert.match(home.headers.get('content-type') || '', /^text\/html/)
   assert.match(await home.text(), /VoiceRights Vault/)
-  assert.match(home.headers.get('content-security-policy') || '', /frame-ancestors 'none'/)
+  const contentSecurityPolicy = home.headers.get('content-security-policy') || ''
+  assert.match(contentSecurityPolicy, /frame-ancestors 'none'/)
+  assert.match(contentSecurityPolicy, /connect-src 'self' blob:/)
   assert.equal(home.headers.get('x-content-type-options'), 'nosniff')
 
   const routeRefresh = await request('/demo/creator')
