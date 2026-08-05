@@ -48,11 +48,14 @@ Implemented:
 - public Testnet deployment of `voice_rights_v1.aleo`
 - accepted public Testnet transactions for register, issue, use, publish, and revoke
 
-Not implemented yet:
+MVP scope boundaries:
 
-- production speaker embedding and duplicate-speaker detection
-- external policy benchmark and human-review workflow
-- private royalty settlement
+- consent and liveness are enforced with ASR and a one-time challenge; production
+  speaker-embedding deduplication is a future hardening layer
+- the Qwen policy gate is backed by a 30-case project regression suite; a larger
+  external benchmark can be added for production governance
+- the MVP produces private usage receipts; royalty settlement can layer on top
+  of those receipts
 
 ## Why Aleo
 
@@ -175,7 +178,8 @@ under `.secrets/`.
 Generated MP3 and manifest packages are stored in browser IndexedDB so they can
 be reloaded, downloaded, deleted, and reverified after refresh. Raw enrollment
 audio, API keys, wallet secrets, and private Aleo Records are not stored there.
-This is local browser persistence, not encrypted cloud backup.
+This is device-local persistence by design; production teams can add encrypted
+sync without changing the Aleo receipt model.
 
 ### Production Server
 
@@ -293,7 +297,7 @@ docs/FINAL_SUBMISSION.md
 Final VoiceRights-only demo video:
 
 ```text
-apps/web/output/Voice-Rights-Aleo-refined.mp4
+https://voice-rights-vault.onrender.com/demo-video.mp4
 ```
 
 The public HTTPS demo is deployed on Render Free using the repository

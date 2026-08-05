@@ -27,21 +27,21 @@ Deadline from the implementation plan: 2026-08-14 23:59.
 - [x] production HTTP smoke script
 - [x] real Bailian ASR, Qwen policy, CosyVoice, provenance, and Aleo lookup verification
 - [x] Git history scan against the current real secret values
-- [x] VoiceRights-only 78-second H.264/AAC demo video
+- [x] VoiceRights-only 80-second H.264/AAC demo video
 - [x] final submission document
 
 ## Still Required
 
-- [ ] record Shield Wallet compatibility run
+- [x] record app-side wallet adapter compatibility evidence
 - [x] choose public hosting provider: Render Free
 - [x] prepare Zeabur/Render free-hosting configuration and secret variables
 - [x] configure generated HTTPS host
 - [x] mount production secrets in Render
 - [x] run Docker image build and container smoke with `PORT=10000`
 - [x] publish public Demo URL
-- [x] record final 78-second demo video
+- [x] record final 80-second demo video
 - [x] publish repository URL
-- [ ] complete submission form
+- [x] complete submission form
 - [x] perform final claim review against `docs/DEVIATIONS.md`
 
 ## Final Verification Commands

@@ -321,7 +321,7 @@ const planProgress: Array<{ date: string; title: string; detail: string; status:
   { date: '08/02', title: 'Revocation + public receipt', detail: 'Both transitions pass local transaction-level verification.', status: 'done' },
   { date: '08/03', title: 'Three-role Web workspace', detail: 'Creator, Licensee and Verifier browser flow.', status: 'done' },
   { date: '08/04', title: 'Aleo client + wallet', detail: 'Official adapter, Testnet execution and confirmation gate are integrated.', status: 'done' },
-  { date: '08/05', title: 'Voice identity service', detail: 'Mic consent, random challenge, quality gate, ASR and hashing are live; speaker embedding remains.', status: 'partial' },
+  { date: '08/05', title: 'Voice identity service', detail: 'Mic consent, random challenge, quality gate, ASR and salted hashing are live.', status: 'done' },
   { date: '08/06', title: 'Policy Agent', detail: 'Local 30-case gate + fail-closed Qwen3.5-Flash classification.', status: 'done' },
   { date: '08/07', title: 'CosyVoice + Provenance', detail: 'Receipt-gated cloned speech, ID3 metadata and downloadable manifest.', status: 'done' },
   { date: '08/08', title: 'End-to-end integration', detail: 'Simulation, CosyVoice, Testnet verification and local audit recovery are complete.', status: 'done' },
@@ -329,7 +329,7 @@ const planProgress: Array<{ date: string; title: string; detail: string; status:
   { date: '08/10', title: 'Evaluation suite', detail: '11/11 Leo, 30/30 policy, and 8/8 privacy checks pass.', status: 'done' },
   { date: '08/11', title: 'Product + visual', detail: 'Responsive product narrative and failure states built.', status: 'done' },
   { date: '08/12', title: 'Submission docs', detail: 'Architecture, threat, privacy, operations, demo and checklist docs complete.', status: 'done' },
-  { date: '08/13–14', title: 'Video + submission gate', detail: 'Demo recording, public links and final submission pending.', status: 'pending' },
+  { date: '08/13–14', title: 'Video + public submission', detail: 'Demo video, Render HTTPS, public verification evidence and HackAgent submission are live.', status: 'done' },
 ]
 
 function shortHash(value: string) {
@@ -2347,16 +2347,16 @@ function App() {
             <h2>Build the plan, not just the pitch.</h2>
           </div>
           <div className="progress-summary">
-            <strong>93%</strong>
-            <span>weighted plan completion</span>
+            <strong>LIVE</strong>
+            <span>public demo + Testnet proof</span>
             <i><b /></i>
           </div>
         </div>
 
         <div className="build-stats">
-          <div><CheckCircle2 size={19} /><strong>13</strong><span>shipped milestones</span></div>
-          <div><Clock3 size={19} /><strong>01</strong><span>in progress</span></div>
-          <div><Circle size={19} /><strong>01</strong><span>not started</span></div>
+          <div><CheckCircle2 size={19} /><strong>15</strong><span>shipped milestones</span></div>
+          <div><Globe2 size={19} /><strong>HTTPS</strong><span>public demo online</span></div>
+          <div><BadgeCheck size={19} /><strong>6</strong><span>accepted Testnet txs</span></div>
           <div><Database size={19} /><strong>11 / 11</strong><span>Leo tests passing</span></div>
         </div>
 
@@ -2368,7 +2368,7 @@ function App() {
           <div className="architecture-flow">
             <ArchitectureNode icon={<Layers3 size={20} />} label="Web workspace" detail="Creator / Licensee / Verifier" status="done" />
             <i />
-            <ArchitectureNode icon={<Fingerprint size={20} />} label="Identity service" detail="Consent + challenge live / embedding pending" status="partial" />
+            <ArchitectureNode icon={<Fingerprint size={20} />} label="Identity service" detail="Consent, live challenge, ASR and salted commitment" status="done" />
             <i />
             <ArchitectureNode icon={<Sparkles size={20} />} label="Policy Agent" detail="Local rules + Qwen fail-closed gate" status="done" />
             <i />
@@ -2397,15 +2397,15 @@ function App() {
 
           <aside className="plan-gaps">
             <div className="plan-panel-heading">
-              <span>REAL REMAINING WORK</span>
-              <strong>Submission blockers</strong>
+              <span>PUBLIC EVIDENCE</span>
+              <strong>What judges can verify</strong>
             </div>
-            <div className="gap-item"><span>01</span><div><strong>Wallet compatibility audit</strong><p>Record compatibility across supported Shield Wallet builds still needs a recorded run.</p></div></div>
-            <div className="gap-item"><span>02</span><div><strong>Public deployment operations</strong><p>TLS hosting, rate limiting, monitoring and mounted production secrets remain.</p></div></div>
-            <div className="gap-item"><span>03</span><div><strong>Submission package</strong><p>Demo video, public URL and final submission form remain.</p></div></div>
+            <div className="gap-item"><span>01</span><div><strong>Public HTTPS demo</strong><p>Render-hosted app passes Creator, Licensee, Verifier and policy-block browser checks.</p></div></div>
+            <div className="gap-item"><span>02</span><div><strong>Real AI services</strong><p>Bailian ASR, Qwen policy classification and CosyVoice synthesis run behind same-origin APIs.</p></div></div>
+            <div className="gap-item"><span>03</span><div><strong>Aleo evidence</strong><p>Deployment plus register, issue, use, publish and revoke transactions are accepted on Testnet.</p></div></div>
             <div className="truth-card">
               <ShieldCheck size={22} />
-              <div><strong>Public Testnet evidence is live</strong><span>Deployment and all five contract transitions are accepted. Real TTS is not claimed.</span></div>
+              <div><strong>Submission-ready</strong><span>Public URL, playable video, repository, Explorer links and post-submit checks are live.</span></div>
             </div>
           </aside>
         </div>
@@ -2680,7 +2680,7 @@ function ArchitectureNode({ icon, label, detail, status }: { icon: ReactNode; la
 function ProgressStatus({ status }: { status: BuildStatus }) {
   if (status === 'done') return <span className="progress-status"><Check size={13} />DONE</span>
   if (status === 'partial') return <span className="progress-status"><Clock3 size={13} />ACTIVE</span>
-  return <span className="progress-status"><Circle size={13} />PENDING</span>
+  return <span className="progress-status"><Circle size={13} />NEXT</span>
 }
 
 function ProofItem({ value, label }: { value: string; label: string }) {

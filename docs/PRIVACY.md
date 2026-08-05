@@ -57,7 +57,8 @@ The verifier does not need:
 
 Generated packages remain in browser IndexedDB after refresh. Users can
 download or delete each package. Clearing site data deletes the local audit
-history. It is not encrypted cloud backup.
+history. It is intentionally device-local for the MVP; encrypted sync can be
+added as a production hardening layer.
 
 ## Operator Responsibilities
 

@@ -2,7 +2,7 @@
 
 Updated: 2026-08-03
 
-Final video length: 78.23 seconds.
+Final video length: 80.73 seconds.
 
 ## 0:00-0:09 — Problem And Product
 

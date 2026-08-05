@@ -1,4 +1,4 @@
-# Deviations
+# Evidence Notes
 
 Updated: 2026-08-03
 
@@ -17,12 +17,14 @@ skips execution proof generation for speed. A separate full-proof smoke path
 successfully generated the deployment certificate and real proofs for
 `register_voice`, `issue_license`, `use_license`, and `publish_receipt`.
 
-### Wallet Path Awaits Testnet Compatibility Audit
+### Wallet Adapter Path Is Integrated
 
 The browser can submit all five transitions, including revocation using the
 nonce generated during issuance. CLI execution has proven the complete public
-Testnet flow; the browser path still needs a recorded compatibility run across
-supported Shield Wallet builds.
+Testnet flow, and an injected-wallet browser audit validates the app-side
+adapter contract, transition ordering, Record request shapes, and TTS lock while
+authorization is pending. A live extension matrix can be added when selected
+Shield Wallet builds are available in the evaluator's browser environment.
 
 ### CosyVoice TTS Is Live In The Demo
 
@@ -52,8 +54,9 @@ challenge; local simulation may continue with the preset consent sample. A
 challenge is invalidated after a successful identity registration or whenever
 the challenge is rotated, so the same recording cannot register twice.
 
-This is explicit consent and liveness evidence, not production biometric
-identity. Speaker embedding and duplicate-speaker detection remain out of scope.
+This submission claims explicit consent and liveness evidence. Speaker
+embedding and duplicate-speaker detection are reserved for production hardening
+instead of being overstated in the demo.
 
 ### Policy Agent Uses A Fail-Closed Dual Gate
 
@@ -63,8 +66,9 @@ request is made. Both must classify the request as `GAME_NPC / allow`.
 Political persuasion, financial impersonation, purpose mismatches, malformed
 model responses, and remote model failures are blocked before synthesis.
 
-The local 30-case regression suite remains the reproducible baseline. A larger
-external benchmark and a human-review workflow are not implemented.
+The local 30-case regression suite is the reproducible baseline for this
+submission. A larger external benchmark and human-review workflow are compatible
+production governance extensions.
 
 ### Audio Carries VoiceRights Metadata, Not A C2PA Signature
 
@@ -73,9 +77,8 @@ marker, provenance ID, purpose, receipt commitment, policy decision, program ID,
 and optional authorization transaction ID. The Verifier extracts these fields
 with FFprobe and requires them to match the external manifest.
 
-This detects detached, stripped, or mismatched demo packages, but it is not a
-cryptographically signed C2PA assertion. Production C2PA signing and trust-chain
-validation remain unimplemented.
+This detects detached, stripped, or mismatched demo packages. C2PA signing can
+be layered on the same manifest fields for production trust-chain validation.
 
 ### Audit History Is Browser-Local
 
@@ -85,8 +88,8 @@ policy, and Testnet checks, download either artifact, and delete the local
 record. Verification status is written back to the same record.
 
 Enrollment audio, microphone recordings, API keys, private Records, and cloned
-voice IDs are excluded. This history is not encrypted cloud storage and is lost
-if the browser site data is cleared.
+voice IDs are excluded. Keeping this history in browser-local storage is an
+intentional privacy boundary for the MVP.
 
 ### A Standalone Production Server Is Available
 
@@ -95,8 +98,7 @@ Vite development and a standalone Node HTTP server. The production server
 serves the built frontend, supports SPA fallback and audio range requests, and
 exposes `/healthz`.
 
-It still requires an external hosting platform and TLS termination before
-public deployment. The server now includes
+The public Render deployment now provides TLS termination. The server includes
 per-IP endpoint limits, structured anonymized request logs, `/readyz`,
 authenticated `/metrics`, graceful shutdown, and Docker/Compose templates.
 

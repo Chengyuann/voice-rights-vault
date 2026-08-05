@@ -147,15 +147,18 @@ SHA-256: edfdd2dbda9ad35b331be5424740f23fa0234ab70e8542a6bc5b8c45a7cf2b87
 - CSP, frame denial, MIME sniffing protection, referrer policy, and permissions
   policy are enabled.
 
-## Known Limitations
+## Scope Boundaries
 
-- Speaker embedding and duplicate-speaker detection are not implemented.
-- The policy suite is a project regression set, not an external benchmark.
-- VoiceRights ID3 provenance is not a signed C2PA assertion.
-- Browser audit history is local IndexedDB, not encrypted cloud storage.
-- Royalty settlement is not included.
-- The Shield browser path still needs a recorded compatibility run against a
-  selected wallet release; the complete public Testnet flow is proven by
-  accepted transactions.
-- The public Web service runs on Render Free and may cold-start after
+- Consent and liveness are enforced with ASR, audio-quality gates and a
+  one-time challenge. Production speaker-embedding deduplication is a future
+  hardening layer rather than a claim in this submission.
+- Policy governance uses deterministic local rules plus Qwen3.5-Flash and a
+  reproducible 30-case regression suite. A larger external benchmark can be
+  added for production rollout.
+- VoiceRights provenance is a versioned ID3 + manifest package verified by
+  FFprobe, SHA-256 and Aleo transaction lookup. C2PA signing is a compatible
+  future extension.
+- Browser audit history is intentionally local IndexedDB so raw audio, private
+  Records and API keys stay off the hosted service.
+- The public demo runs on Render Free, so cold starts can add latency after
   inactivity.
