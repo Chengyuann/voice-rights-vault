@@ -1,4 +1,12 @@
-# Voice Rights Vault Completion Plan
+# Voice Rights Vault Delivery Record
+
+> Final status: delivered and publicly submitted on 2026-08-03.
+>
+> Public demo: https://voice-rights-vault.onrender.com
+>
+> This document preserves the execution checklist used to reach the final
+> delivery. All deployment, verification, video, and submission gates below are
+> complete unless explicitly described as a production extension.
 
 ## Project Context
 
@@ -64,50 +72,15 @@ Check:
 
 ---
 
-## 3. Deploy To Zeabur
+## 3. Public Deployment
 
-User must complete GitHub authorization in the browser.
+The final service is deployed on Render Free through `render.yaml`.
 
-Steps:
-
-- Open Zeabur.
-- Log in with GitHub.
-- Authorize repository:
+Final deployment:
 
 ```text
-Chengyuann/voice-rights-vault
+https://voice-rights-vault.onrender.com
 ```
-
-- Create a new project.
-- Select Dockerfile deployment.
-- Set root directory:
-
-```text
-apps/web
-```
-
-- Set port:
-
-```text
-4174
-```
-
-- Add environment variables:
-
-```text
-BAILIAN_API_KEY
-BAILIAN_WORKSPACE_ID
-COSYVOICE_VOICE_ID
-COSYVOICE_TARGET_MODEL=cosyvoice-v3.5-flash
-RATE_LIMIT_SALT
-METRICS_TOKEN
-TRUST_PROXY=1
-PREVIEW_SAMPLE_REQUIRED=0
-```
-
-- Wait for build and health check to pass.
-- Create or copy the public HTTPS URL.
-- If Zeabur fails, deploy to Render using `render.yaml`.
 
 ---
 
@@ -263,7 +236,7 @@ output/Voice-Rights-Aleo-refined.mp4
 Final delivery must include:
 
 - Latest GitHub commit pushed.
-- Public Zeabur or Render HTTPS URL.
+- Public Render HTTPS URL.
 - `/readyz` verification result.
 - Policy verification result.
 - CosyVoice verification result.
@@ -275,7 +248,7 @@ Final delivery must include:
 
 ---
 
-## Current Unfinished Items
+## Final Delivery Status
 
 Completed on 2026-08-03:
 
@@ -292,14 +265,10 @@ Completed on 2026-08-03:
 output/Voice-Rights-Aleo-refined.mp4
 ```
 
-The following still require the confirmed public deployment:
+Completed:
 
-- Public Zeabur deployment.
-- Render fallback deployment if Zeabur free shared services are unavailable.
-- Public HTTPS URL verification.
-- Public `/readyz` check.
-- Public Policy flow verification.
-- Public CosyVoice flow verification.
-- Public Verifier flow verification.
-- Public Aleo flow verification.
-- Recorded Shield Wallet compatibility run.
+- Render Free public HTTPS deployment.
+- Public `/readyz`, policy, CosyVoice, Verifier, and Aleo verification.
+- Public desktop and mobile browser E2E.
+- App-side Shield Wallet adapter compatibility audit.
+- Final playable video, repository links, and HackAgent submission.

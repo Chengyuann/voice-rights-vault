@@ -9,22 +9,24 @@ on Aleo.
 - Motion-powered enter and exit transitions
 - Creator, Licensee, and Verifier workspaces
 - browser-local SHA-256 and salted commitment demo
-- private license issuance and revocation simulation
-- rule-first policy classification
+- deterministic browser flow plus optional live Shield Wallet execution
+- fail-closed local + Qwen3.5-Flash policy classification
 - 30-case policy regression and 8-check privacy audit
 - authorized, political, financial impersonation, expired, exhausted, and
   revoked scenarios
-- receipt-gated Mock TTS and downloadable manifest
+- receipt-gated CosyVoice synthesis and downloadable manifest
 - selective disclosure and privacy-boundary views
 - Aleo proof evidence and implementation-plan status board
 - optional Shield Wallet mode using the official
   `@provablehq/aleo-wallet-adaptor-*` packages
 
-The deterministic browser flow remains a local simulation. Wallet mode can
+The deterministic browser flow keeps the public demo repeatable. Wallet mode can
 submit `register_voice`, `issue_license`, `use_license`, `revoke_license`, and
 `publish_receipt` to the deployed `voice_rights_v1.aleo` Testnet program when
 the wallet has fees. Public Testnet and local devnode evidence is documented in
 `../../docs/ALEO_EVIDENCE.md`.
+
+Public demo: https://voice-rights-vault.onrender.com
 
 ## Run
 

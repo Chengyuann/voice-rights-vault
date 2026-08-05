@@ -1,25 +1,31 @@
 # VoiceRights Vault Aleo 参赛实施规划
 
 > 文档状态：V1.0
-> 更新日期：2026-08-02
+> 更新日期：2026-08-05
 > 参赛活动：Aleo Hackathon 2026
 > 推荐赛道：AI × Privacy
 > 项目提交截止：2026-08-14 23:59
-> 当前阶段：公共 Testnet、完整合约流与评测报告完成，进入兼容性录制 / 提交阶段
+> 最终状态：产品、公共 Testnet、真实 AI 服务、公开视频、公共 HTTPS 与提交均已完成
+>
+> Public demo: https://voice-rights-vault.onrender.com
+>
+> Repository: https://github.com/Chengyuann/voice-rights-vault
+>
+> 以下正文保留为项目从规划到交付的实施记录；顶部状态为当前最终结果。
 
 ---
 
 ## 0. 当前进度快照
 
-更新时间：2026-08-02
+更新时间：2026-08-05
 
 按第 16 节的 15 个时间节点计算：
 
 ```text
-已完成：12
-进行中：2
-未开始：1
-加权完成度：87%
+交付里程碑：15 / 15
+公共 Testnet 交易：6 / 6 accepted
+公开浏览器主流程：passed
+交付状态：PUBLIC + SUBMITTED
 ```
 
 当前已提前完成：
@@ -37,20 +43,22 @@
 - 规则优先的 Policy Agent 交互模拟；
 - 30 / 30 Policy 回归用例与 8 / 8 Leo 隐私检查；
 - 五类失败场景：政治、金融冒充、过期、额度耗尽、撤销；
-- UsageReceipt 门禁后的 Mock TTS、音频播放和 Manifest 下载；
+- UsageReceipt 门禁后的真实 CosyVoice、音频播放和 Manifest 下载；
 - 选择性披露验证界面、隐私边界图和实施进度看板；
 - 桌面、平板和移动端适配。
 
-当前真实缺口：
+最终交付包含：
 
-1. Shield Wallet 对已部署程序的录制兼容性运行；
-2. 生产级 Voice Identity Service；
-3. Architecture / Threat Model 完整文档；
-4. Demo 视频、公开 URL 和最终提交。
+1. Shield Wallet 官方 adapter 与 app-side 交易兼容证据；
+2. ASR consent + one-time challenge Voice Identity Service；
+3. Architecture / Threat Model / Privacy / Operations 文档；
+4. 80.73 秒 Demo 视频、公共 HTTPS URL 和 HackAgent 提交。
 
 说明：
 
-> 当前网页保留稳定的浏览器模拟，并已集成 Shield Wallet 交易模式；公共 Testnet 部署、Explorer 交易、本地 proof 与钱包前端集成证据均真实可查，但不宣称真实 TTS 或生产级 Policy Agent 已完成。
+> 当前网页提供稳定的浏览器产品流，并已集成 Shield Wallet 交易模式；公共
+> Testnet、Explorer 交易、本地 proof、Bailian ASR、Qwen Policy Agent、
+> CosyVoice 和外部 Verifier 证据均可验证。
 
 ---
 
@@ -711,7 +719,7 @@ MVP 语义：
                            │ success
 ┌──────────────────────────▼───────────────────────┐
 │                   TTS Adapter                   │
-│ Mock adapter / authorized local TTS / API       │
+│ Receipt-gated CosyVoice API                     │
 └──────────────────────────┬───────────────────────┘
                            │
 ┌──────────────────────────▼───────────────────────┐
@@ -1213,7 +1221,7 @@ voice-rights-vault/
 │   ├── THREAT_MODEL.md
 │   ├── DEMO_SCRIPT.md
 │   ├── ALEO_EVIDENCE.md
-│   └── DEVIATIONS.md
+│   └── EVIDENCE_NOTES.md
 └── outputs/
     ├── screenshots/
     ├── test-reports/
@@ -1362,7 +1370,7 @@ voice-rights-vault/
 
 - 当天不因 Testnet 连续失败而停止其他交付；
 - 不伪造部署成功；
-- 在 `DEVIATIONS.md` 明确记录。
+- 在 `EVIDENCE_NOTES.md` 明确记录。
 
 ### 8 月 10 日：评测
 

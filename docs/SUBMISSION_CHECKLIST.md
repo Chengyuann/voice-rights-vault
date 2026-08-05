@@ -30,7 +30,7 @@ Deadline from the implementation plan: 2026-08-14 23:59.
 - [x] VoiceRights-only 80-second H.264/AAC demo video
 - [x] final submission document
 
-## Still Required
+## Submission Complete
 
 - [x] record app-side wallet adapter compatibility evidence
 - [x] choose public hosting provider: Render Free
@@ -42,7 +42,7 @@ Deadline from the implementation plan: 2026-08-14 23:59.
 - [x] record final 80-second demo video
 - [x] publish repository URL
 - [x] complete submission form
-- [x] perform final claim review against `docs/DEVIATIONS.md`
+- [x] perform final claim review against `docs/EVIDENCE_NOTES.md`
 
 ## Final Verification Commands
 

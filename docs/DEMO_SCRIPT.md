@@ -117,7 +117,7 @@ Closing line:
 - record Wallet mode separately when Shield compatibility is confirmed;
 - do not display `.secrets`, wallet keys, API keys, or private Record plaintext;
 - capture the accepted Explorer links;
-- keep claims consistent with `docs/DEVIATIONS.md`.
+- keep claims consistent with `docs/EVIDENCE_NOTES.md`.
 
 Final artifact:
 
